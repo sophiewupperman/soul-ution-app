@@ -7,7 +7,7 @@ const StyledForm = styled.body`
   display: grid;
   justify-items: center;
   gap: 10px;
-  margin-bottom: ;
+  margin-bottom: 20px;
 `
 
 export default function Stats() {
