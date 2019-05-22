@@ -6,8 +6,9 @@ import Navigation from './Navigation'
 import Stats from '../stats/Stats'
 import Form from '../form/Form'
 
-const Grid = styled.div`
+const Grid = styled.body`
   display: grid;
+  height: 100vh;
 `
 
 export default function App() {

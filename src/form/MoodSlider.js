@@ -1,19 +1,26 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const StyledMoodSlider = styled.body`
+  display: grid;
+  justify-items: center;
+  gap: 30px;
+  margin-bottom: 10px;
+`
 
 export default function MoodSlider() {
   return (
-    <div>
-      <label>How are you feeling today?</label>
+    <StyledMoodSlider>
+      <label forhtml="mood">How are you feeling today?</label>
       <input
-        /*value=MOOD*/
+        name="mood"
         type="range"
-        min="0"
+        min="1"
         max="100"
-        value="50"
-        class="slider"
-        id="myRange"
+        size="200"
+        /*value=MOOD*/
         /*onChange={this.handle...Change}*/
       />
-    </div>
+    </StyledMoodSlider>
   )
 }
