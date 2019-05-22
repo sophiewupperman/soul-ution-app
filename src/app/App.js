@@ -1,16 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import AppGrid from "./AppGrid";
+import { BrowserRouter as , Route } from "react-router-dom";
+import styled from 'styled-components'
+import GlobalStyles from '../misc/GlobalStyles'
 import Navigation from "./Navigation";
 import Stats from "../stats/Stats";
+
+const Grid = styled.div`
+  display: grid;
+`
 
 export default function App() {
   return (
     <Router>
-      <AppGrid>
+      <Grid>
         <Stats />
         <Navigation />
-      </AppGrid>
+        <GlobalStyles />
+        <Route exact path="/" render={() => <h1>Home</h1>} />
+      </Grid>
     </Router>
   );
 }
