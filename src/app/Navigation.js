@@ -1,6 +1,6 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import styled from 'styled-components'
 
 const Wrapper = styled.nav`
   display: grid;
@@ -8,7 +8,8 @@ const Wrapper = styled.nav`
   background: plum;
   color: white;
   box-shadow: 0 0 8px #0007;
-`;
+  position: sticky;
+`
 
 const StyledLink = styled(NavLink)`
   display: flex;
@@ -22,7 +23,7 @@ const StyledLink = styled(NavLink)`
     background: lightgray;
     color: white;
   }
-`;
+`
 
 export default function Navigation() {
   return (
@@ -32,5 +33,5 @@ export default function Navigation() {
       </StyledLink>
       <StyledLink to="/create">Log Book</StyledLink>
     </Wrapper>
-  );
+  )
 }
