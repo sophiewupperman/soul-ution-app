@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const StyledMoodSlider = styled.body`
+const StyledMoodSlider = styled.div`
   display: grid;
   justify-items: center;
   gap: 30px;
