@@ -13,7 +13,7 @@ const StyledHabitButton = styled.button`
   color: ${props => (props.active ? '#889ab5' : 'white')};
   width: 200px;
   height: 30px;
-  margin: 20px;
+  margin: 10px;
   text-align: center;
   text-decoration: none;
   font-size: 20px;
@@ -29,12 +29,9 @@ const HabitButton = ({ habit, toggleHabbitChoosen, index }) => {
 
   return (
     <StyledButttonForm>
-      <label>Maintained your habits?</label>
-      <StyledButttonForm>
-        <StyledHabitButton active={active} onClick={onHabbitButtonCLick}>
-          {habit.name}
-        </StyledHabitButton>
-      </StyledButttonForm>
+      <StyledHabitButton active={active} onClick={onHabbitButtonCLick}>
+        {habit.name}
+      </StyledHabitButton>
     </StyledButttonForm>
   )
 }

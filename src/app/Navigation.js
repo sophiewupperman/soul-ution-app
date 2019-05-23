@@ -5,15 +5,20 @@ import styled from 'styled-components'
 const Wrapper = styled.nav`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 30px;
   background: plum;
   color: white;
   box-shadow: 0 0 8px #0007;
-  position: sticky;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 `
 
 const StyledLink = styled(NavLink)`
-  display: flex;
-  justify-content: center;
+  height: 30px;
+  text-align: center;
+  padding: 10px;
   align-items: center;
   background: white;
   color: black;

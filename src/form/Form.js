@@ -6,8 +6,6 @@ import HabitButton from './HabitButton'
 const StyledForm = styled.body`
   display: grid;
   justify-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
 `
 
 export default function Stats() {
@@ -28,13 +26,14 @@ export default function Stats() {
     ])
 
     console.log(habits)
-    // Save in LocalStorage
+    // Save in LocalStorage - array in local storage packen - im anderen view die daten aus dem localstorage ziehen
   }
 
   return (
     <StyledForm>
       <h2>SOUL OUTION</h2>
       <MoodSlider />
+      <p>Maintained your habits?</p>
       {habits.map((habit, index) => {
         return (
           <HabitButton
