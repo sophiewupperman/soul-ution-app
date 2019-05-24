@@ -36,7 +36,7 @@ export default function Navigation() {
       <StyledLink exact to="/">
         Statistics
       </StyledLink>
-      <StyledLink to="/create">Log Book</StyledLink>
+      <StyledLink to="/form">Log Book</StyledLink>
     </Wrapper>
   )
 }
