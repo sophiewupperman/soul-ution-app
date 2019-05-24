@@ -1,6 +1,6 @@
-export function getFromLocal(habit) {
+export function getFromLocal(habits) {
   try {
-    return JSON.parse(localStorage.getItem(habit))
+    return JSON.parse(localStorage.getItem(habits))
   } catch (error) {
     console.log(error)
   }

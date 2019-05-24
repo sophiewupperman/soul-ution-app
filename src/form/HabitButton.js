@@ -19,17 +19,13 @@ const StyledHabitButton = styled.button`
   font-size: 20px;
 `
 
-const HabitButton = ({ habit, toggleHabbitChoosen, index }) => {
-  const [active, setActive] = useState(false)
-
-  const onHabbitButtonCLick = () => {
-    setActive(!active)
-    toggleHabbitChoosen(index)
-  }
-
+const HabitButton = ({ habit, toggleHabbitChoosen, index, isChosen }) => {
   return (
     <StyledButttonForm>
-      <StyledHabitButton active={active} onClick={onHabbitButtonCLick}>
+      <StyledHabitButton
+        active={isChosen}
+        onClick={() => toggleHabbitChoosen(index)}
+      >
         {habit.name}
       </StyledHabitButton>
     </StyledButttonForm>

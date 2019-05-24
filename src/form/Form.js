@@ -9,21 +9,17 @@ const StyledForm = styled.div`
   justify-items: center;
 `
 
-export default function Stats() {
+export default function HabbitButtonList() {
   const [habits, setHabits] = useState(
-    getFromLocal() || [
-      { name: 'EXERCISE', isChoosen: false /*key: '0'*/ },
-      { name: 'SLEEP', isChoosen: false, key: '1' },
-      { name: 'VITAMIN D', isChoosen: false /*key: '2'*/ },
-      { name: 'JOURNAL', isChoosen: false /*key: '3'*/ },
-      { name: 'SOCIAL', isChoosen: false /*key: '4'*/ },
-      { name: 'NOURISHMENT', isChoosen: false /*key: '5'*/ },
+    getFromLocal('habits') || [
+      { name: 'EXERCISE', isChoosen: false },
+      { name: 'SLEEP', isChoosen: false },
+      { name: 'VITAMIN D', isChoosen: false },
+      { name: 'JOURNAL', isChoosen: false },
+      { name: 'SOCIAL', isChoosen: false },
+      { name: 'NOURISHMENT', isChoosen: false },
     ]
   )
-  /*const habitItems = habits.map((habit, index) => (
-    // Only do this if items have no stable IDs
-    <li key={index}>{habit.text}</li>
-  ))*/
 
   useEffect(() => {
     setToLocal('habits', habits)
@@ -45,15 +41,15 @@ export default function Stats() {
       <h2>SOUL OUTION</h2>
       <MoodSlider />
       <p>Maintained your habits?</p>
-      {habits.map((habit, index) => {
-        return (
-          <HabitButton
-            habit={habit}
-            index={index}
-            toggleHabbitChoosen={toggleHabbitChoosen}
-          />
-        )
-      })}
+      {habits.map((habit, index) => (
+        <HabitButton
+          habit={habit}
+          index={index}
+          toggleHabbitChoosen={toggleHabbitChoosen}
+          key={habit.name}
+          isChosen={habit.isChoosen}
+        />
+      ))}
     </StyledForm>
   )
 }
