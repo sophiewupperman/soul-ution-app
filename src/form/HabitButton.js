@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const StyledButttonForm = styled.div`
@@ -23,7 +23,7 @@ const HabitButton = ({ habit, toggleHabbitChoosen, index, isChosen }) => {
   return (
     <StyledButttonForm>
       <StyledHabitButton
-        active={isChosen}
+        active={isChosen} //das ist das argument für den parameter in background-color - die property die angespochen wird
         onClick={() => toggleHabbitChoosen(index)}
       >
         {habit.name}

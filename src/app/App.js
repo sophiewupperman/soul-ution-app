@@ -5,6 +5,7 @@ import GlobalStyles from '../misc/GlobalStyles'
 import Navigation from './Navigation'
 import Stats from '../stats/Stats'
 import Form from '../form/Form'
+import { createHabit } from '../form/Form'
 
 const Grid = styled.div`
   display: grid;
@@ -16,17 +17,25 @@ export default function App() {
     <Router>
       <Grid>
         <GlobalStyles />
-        <Route exact path="/" render={() => <Stats />} />
         <Route
-          path="/form"
-          render={
-            (/*{ history }*/) => (
-              <Form /*onFormSubmit={data => createMoodHabit(data, history)}*/ />
-            )
-          }
+          exact
+          path="/"
+          render={({ history }) => (
+            <Stats onFormSubmit={data => createHabit(data, history)} />
+          )}
         />
+
+        <Route path="/form" render={() => <Form />} />
         <Navigation />
       </Grid>
     </Router>
   )
 }
+
+/*<Route
+      path="/form"
+      render={() => (
+        <StyledHabitStreaks onFormSubmit={data => createHabit(data, history)} />
+      )}
+    />
+          }</Router>*/

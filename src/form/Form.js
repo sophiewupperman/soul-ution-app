@@ -2,12 +2,20 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import MoodSlider from './MoodSlider'
 import HabitButton from './HabitButton'
-import { getFromLocal, setToLocal } from '../services'
+import { postHabit, getFromLocal, setToLocal } from '../services'
 
 const StyledForm = styled.div`
   display: grid;
   justify-items: center;
 `
+export const createHabit = (data, history) => {
+  postHabit(data)
+    .then(newHabit => {
+      HabbitButtonList.setHabits([...HabbitButtonList.habits, newHabit])
+      history.push('/')
+    })
+    .catch(error => console.log(error))
+}
 
 export default function HabbitButtonList() {
   const [habits, setHabits] = useState(
@@ -43,9 +51,9 @@ export default function HabbitButtonList() {
       <p>Maintained your habits?</p>
       {habits.map((habit, index) => (
         <HabitButton
-          habit={habit}
-          index={index}
-          toggleHabbitChoosen={toggleHabbitChoosen}
+          habit={habit} //why? ... habit in der arrow funktion steht (name) für ein einzelndes object in dem array - in der HabitButton Datei wird das weiter gegeben als prop {habit} um den namen aus dem objekt oben zu bekommen - the VALUE of HabitButton is one single object from the habits array called habit - this is how you get the Tag to have a meaning/value
+          index={index} //the second parameter defines the index
+          toggleHabbitChoosen={toggleHabbitChoosen} //führt die obere function toggleHabitChange
           key={habit.name}
           isChosen={habit.isChoosen}
         />
