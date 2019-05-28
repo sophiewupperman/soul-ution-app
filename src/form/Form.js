@@ -34,11 +34,9 @@ export default function HabbitButtonList() {
   })
 
   const toggleHabbitChoosen = index => {
-    setHabits([
-      ...habits.slice(0, index),
-      { ...habits[index], isChoosen: !habits[index].isChoosen },
-      ...habits.slice(index + 1),
-    ])
+    const newHabits = [...habits]
+    newHabits[index].isChoosen = !habits[index].isChoosen
+    setHabits(newHabits)
 
     console.log(habits)
     // Save in LocalStorage - array in local storage packen -> im anderen view die daten aus dem localstorage ziehen
