@@ -1,13 +1,13 @@
-export function getFromLocal(habits) {
+export function getFromLocal(value) {
   try {
-    return JSON.parse(localStorage.getItem(habits))
+    return JSON.parse(localStorage.getItem(value))
   } catch (error) {
     console.log(error)
   }
 }
 
-export function setToLocal(habits, data) {
-  localStorage.setItem(habits, JSON.stringify(data))
+export function setToLocal(valueName, data) {
+  localStorage.setItem(valueName, JSON.stringify(data))
 }
 
 export function fetchHabits(method, data, id = '') {
@@ -24,6 +24,6 @@ export function fetchHabits(method, data, id = '') {
     })
 }
 
-export function postHabit(data) {
+export function postValue(data) {
   return fetchHabits('POST', data)
 }

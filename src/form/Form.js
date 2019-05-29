@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import MoodSlider from './MoodSlider'
 import HabitButton from './HabitButton'
-import { postHabit, getFromLocal, setToLocal } from '../services'
+import { postValue, getFromLocal, setToLocal } from '../services'
 
 const StyledForm = styled.div`
   display: grid;
   justify-items: center;
 `
 export const createHabit = (data, history) => {
-  postHabit(data)
+  postValue(data)
     .then(newHabit => {
       HabbitButtonList.setHabits([...HabbitButtonList.habits, newHabit])
       history.push('/')
