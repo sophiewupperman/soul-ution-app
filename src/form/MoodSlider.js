@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { getFromLocal, setToLocal } from '../services'
 
 const StyledMoodSlider = styled.div`
   display: grid;
@@ -9,17 +10,31 @@ const StyledMoodSlider = styled.div`
 `
 
 export default function MoodSlider() {
+  const [mood, setInputValue] = useState(getFromLocal('mood') || 100)
+
+  const handleMoodChange = event => {
+    setInputValue(event.target.value)
+    console.log(mood)
+  }
+
+  useEffect(() => {
+    setToLocal('mood', mood)
+  })
+
   return (
     <StyledMoodSlider>
-      <label forhtml="mood">How are you feeling today?</label>
+      <label forhtml="mood">
+        How are you feeling today?
+        {mood}%
+      </label>
       <input
         name="mood"
         type="range"
-        min="1"
+        min="0"
         max="100"
         size="200"
-        /*value=MOOD*/
-        /*onChange={this.handle...Change}*/
+        value={mood}
+        onChange={handleMoodChange}
       />
     </StyledMoodSlider>
   )

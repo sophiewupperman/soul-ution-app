@@ -56,7 +56,7 @@ export default function MoodStat() {
       <h2>MOOD</h2>
       <LineChart
         width={400}
-        height={150}
+        height={145}
         data={data}
         margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
       >
