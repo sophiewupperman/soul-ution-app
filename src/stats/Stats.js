@@ -1,7 +1,7 @@
-import React from "react";
-import MoodStat from "./MoodStat";
-import HabitStreak from "./HabitStreaks";
-import Calendar from "./Calendar";
+import React from 'react'
+import MoodStat from './MoodStat'
+import HabitStreak from './HabitStreaks'
+import Calendar from './Calendar'
 
 export default function Stats() {
   return (
@@ -11,5 +11,5 @@ export default function Stats() {
       <MoodStat />
       <HabitStreak />
     </>
-  );
+  )
 }

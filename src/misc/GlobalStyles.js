@@ -6,10 +6,9 @@ export default createGlobalStyle`
   }
 
   body {
-    margin: 0;
-    padding: 20px;
+    padding: 5px;
     font-family: sans-serif;
     color: darkslategray;
-    background: papayawhip;
+    background: white;
   }
 `
