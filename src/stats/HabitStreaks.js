@@ -1,25 +1,49 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { fetchHabits, getFromLocal } from '../services'
 
 const StyledHabitStreaks = styled.section`
   display: grid;
   gap: 10px;
   padding: 20px;
 `
+const StyledHabitStreak = styled.div`
+  background: #b6c1d0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: ${props => (props.active ? 'block' : 'none')};
+`
 
-export default function HabitStreak() {
-  const [habits, setHabits] = useState(getFromLocal('habits') || [])
+export default function HabitStreak({ habits }) {
+  // const [habits, setHabits] = useState(getFromLocal('habits') || [])
 
-  useEffect(() => {
-    loadHabits('habits', habits)
-  })
+  // const addHabitStreak = index => {
+  //   // const newHabits = [...habits]
+  //   // newHabits[index].isChosen = !habits[index].isChosen
+  //   // setHabits(newHabits)
 
-  function loadHabits() {
-    fetchHabits()
-      .then(data => setHabits(data))
-      .catch(error => console.log(error))
-  }
+  //   // console.log(habits)
+  //   // Save in LocalStorage - array in local storage packen -> im anderen view die daten aus dem localstorage ziehen
+  // }
 
-  return <StyledHabitStreaks />
+  return (
+    <StyledHabitStreaks>
+      {habits.map((habit, index) => {
+        if (habit.isChosen) {
+          return (
+            <StyledHabitStreak
+              active={habit.isChosen}
+              value={habit}
+              index={index}
+              key={index}
+            />
+          )
+        } else {
+          return <div />
+        }
+      })}
+    </StyledHabitStreaks>
+  )
 }
+
+//<StyledHabitStreak active="getFromLocal('habit')" />

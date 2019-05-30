@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { postValue, getFromLocal, setToLocal } from '../services'
 
 const StyledMoodSlider = styled.div`
   display: grid;
@@ -8,27 +7,8 @@ const StyledMoodSlider = styled.div`
   gap: 30px;
   margin-bottom: 10px;
 `
-export const createMood = (data, history) => {
-  postValue(data)
-    .then(newMood => {
-      MoodSlider.setInputValue([...MoodSlider.mood, newMood])
-      history.push('/')
-    })
-    .catch(error => console.log(error))
-}
 
-export default function MoodSlider() {
-  const [mood, setInputValue] = useState(getFromLocal('mood') || 100)
-
-  const handleMoodChange = event => {
-    setInputValue(event.target.value)
-    console.log(mood)
-  }
-
-  useEffect(() => {
-    setToLocal('mood', mood)
-  })
-
+export default function MoodSlider({ handleMoodChange, mood }) {
   return (
     <StyledMoodSlider>
       <label forhtml="mood">

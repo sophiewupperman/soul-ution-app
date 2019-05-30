@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
 import { LineChart, Line } from 'recharts'
-import { getFromLocal } from '../services'
 
 const StyledMoodStat = styled.section`
   display: grid;
@@ -9,7 +8,7 @@ const StyledMoodStat = styled.section`
   padding: 20px;
 `
 
-export default function MoodStat() {
+export default function MoodStat({ mood }) {
   const data = [
     {
       mood: 0,
@@ -33,9 +32,10 @@ export default function MoodStat() {
       mood: 60,
     },
     {
-      mood: getFromLocal('mood'),
+      mood: mood,
     },
   ]
+
   return (
     <StyledMoodStat>
       <h2>MOOD</h2>
