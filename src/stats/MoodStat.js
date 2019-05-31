@@ -15,32 +15,15 @@ const StyledLineChart = styled.div`
   margin-bottom: 50px;
 `
 
-export default function MoodStat({ mood }) {
+export default function MoodStat({ yesterday, mood /*prevMood*/ }) {
+  // const prevMood = [...mood]
+
   const data = [
-    {
-      mood: 0,
-    },
-    {
-      mood: 0,
-    },
-    {
-      mood: 100,
-    },
-    {
-      mood: 80,
-    },
-    {
-      mood: 50,
-    },
-    {
-      mood: 70,
-    },
-    {
-      mood: 60,
-    },
-    {
-      mood: mood,
-    },
+    ...[
+      {
+        mood: mood,
+      },
+    ],
   ]
 
   return (

@@ -16,7 +16,12 @@ export default function Form({
   toggleHabbitChosen,
   mood,
   handleMoodChange,
+  day,
 }) {
+  //useEffect(() => {
+  //  setToLocal('day', day)
+  //}, [day])
+
   useEffect(() => {
     setToLocal('habits', habits)
   })
@@ -38,7 +43,6 @@ export default function Form({
           key={habit.name}
           isChosen={habit.isChosen}
         />
-        
       ))}
     </StyledForm>
   )
