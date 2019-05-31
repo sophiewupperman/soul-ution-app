@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 
 export default createGlobalStyle`
   * {
@@ -6,9 +7,14 @@ export default createGlobalStyle`
   }
 
   body {
-    padding: 5px;
     font-family: sans-serif;
-    color: darkslategray;
-    background: white;
+    color: #f1f5fa;
+    margin: 0px;
+    background: #8692A4;
+      }
+
+  h2 {
+    margin: 0;
+    font-size: 20px;
   }
 `

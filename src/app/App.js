@@ -9,7 +9,6 @@ import { getFromLocal } from '../services'
 
 const Grid = styled.div`
   display: grid;
-  height: 100vh;
 `
 
 export default function App() {

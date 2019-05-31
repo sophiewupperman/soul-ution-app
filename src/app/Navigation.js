@@ -5,27 +5,21 @@ import styled from 'styled-components'
 const Wrapper = styled.nav`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 30px;
-  background: plum;
-  color: white;
-  box-shadow: 0 0 8px #0007;
-  overflow: hidden;
   position: fixed;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
 `
 
 const StyledLink = styled(NavLink)`
-  height: 30px;
+  height: 45px;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
   align-items: center;
-  background: white;
   color: black;
   text-decoration: none;
+  text-shadow: 0px 0.5px 0.5px;
 
   &.active {
-    background: lightgray;
     color: white;
   }
 `
@@ -34,9 +28,9 @@ export default function Navigation() {
   return (
     <Wrapper>
       <StyledLink exact to="/">
-        Statistics
+        STATISTICS
       </StyledLink>
-      <StyledLink to="/form">Log Book</StyledLink>
+      <StyledLink to="/form">LOG BOOK</StyledLink>
     </Wrapper>
   )
 }

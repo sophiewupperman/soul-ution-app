@@ -7,9 +7,16 @@ import { setToLocal } from '../services'
 const StyledForm = styled.div`
   display: grid;
   justify-items: center;
+  gap: 10px;
+  padding: 20px;
 `
 
-export default function Form({ habits, toggleHabbitChosen, mood, handleMoodChange }) {
+export default function Form({
+  habits,
+  toggleHabbitChosen,
+  mood,
+  handleMoodChange,
+}) {
   useEffect(() => {
     setToLocal('habits', habits)
   })
@@ -20,7 +27,7 @@ export default function Form({ habits, toggleHabbitChosen, mood, handleMoodChang
 
   return (
     <StyledForm>
-      <h2>SOUL OUTION</h2>
+      <h1>SOUL OUTION</h1>
       <MoodSlider handleMoodChange={handleMoodChange} mood={mood} />
       <p>Maintained your habits?</p>
       {habits.map((habit, index) => (
@@ -31,6 +38,7 @@ export default function Form({ habits, toggleHabbitChosen, mood, handleMoodChang
           key={habit.name}
           isChosen={habit.isChosen}
         />
+        
       ))}
     </StyledForm>
   )

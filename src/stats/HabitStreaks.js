@@ -3,33 +3,48 @@ import styled from 'styled-components'
 
 const StyledHabitStreaks = styled.section`
   display: grid;
-  gap: 10px;
-  padding: 20px;
+  position: absolute;
+  right: 5px;
+  top: 334px;
+  z-index: 2;
 `
 const StyledHabitStreak = styled.div`
+  background: ${props => (props.active ? '#5e6a7e' : 'none')};
+  margin-bottom: 25px;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 20px;
+`
+
+const StyledHabitBar = styled.div`
+  margin-bottom: 3.5px;
+  margin-top: 3.5px;
   background: #b6c1d0;
-  width: 30px;
+  width: 100vw;
   height: 30px;
-  border-radius: 50%;
-  display: ${props => (props.active ? 'block' : 'none')};
+`
+const StyledHabitLabel = styled.label`
+  position: sticky;
+  left: 7px;
 `
 
 export default function HabitStreak({ habits }) {
-  // const [habits, setHabits] = useState(getFromLocal('habits') || [])
-
-  // const addHabitStreak = index => {
-  //   // const newHabits = [...habits]
-  //   // newHabits[index].isChosen = !habits[index].isChosen
-  //   // setHabits(newHabits)
-
-  //   // console.log(habits)
-  //   // Save in LocalStorage - array in local storage packen -> im anderen view die daten aus dem localstorage ziehen
-  // }
-
   return (
-    <StyledHabitStreaks>
-      {habits.map((habit, index) => {
-        if (habit.isChosen) {
+    <div>
+      <StyledHabitLabel forhtml="exercise">EXERCISE</StyledHabitLabel>
+      <StyledHabitBar name="exercise" />
+      <StyledHabitLabel forhtml="sleep">SLEEP</StyledHabitLabel>
+      <StyledHabitBar name="sleep" />
+      <StyledHabitLabel forhtml="vitamind">VITAMIN D</StyledHabitLabel>
+      <StyledHabitBar name="vitamind" />
+      <StyledHabitLabel forhtml="journal">JOURNAL</StyledHabitLabel>
+      <StyledHabitBar name="journal" />
+      <StyledHabitLabel forhtml="social">SOCIAL</StyledHabitLabel>
+      <StyledHabitBar name="social" />
+      <StyledHabitLabel forhtml="nourishment">NOURISHMENT</StyledHabitLabel>
+      <StyledHabitBar name="nourishment" />
+      <StyledHabitStreaks>
+        {habits.map((habit, index) => {
           return (
             <StyledHabitStreak
               active={habit.isChosen}
@@ -38,12 +53,25 @@ export default function HabitStreak({ habits }) {
               key={index}
             />
           )
-        } else {
-          return <div />
-        }
-      })}
-    </StyledHabitStreaks>
+        })}
+      </StyledHabitStreaks>
+    </div>
   )
 }
 
-//<StyledHabitStreak active="getFromLocal('habit')" />
+/*<StyledHabitStreaks>
+{habits.map((habit, index) => {
+  if (habit.isChosen) {
+    return (
+      <StyledHabitStreak
+        active={habit.isChosen}
+        value={habit}
+        index={index}
+        key={index}
+      />
+    )
+  } else {
+    return <div />
+  }
+})}
+</StyledHabitStreaks>*/

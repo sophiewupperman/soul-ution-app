@@ -6,7 +6,6 @@ import Calendar from './Calendar'
 export default function Stats({ habits, mood }) {
   return (
     <>
-      <h2>Stats</h2>
       <Calendar />
       <MoodStat mood={mood} />
       <HabitStreak habits={habits} />
