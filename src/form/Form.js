@@ -16,11 +16,11 @@ export default function Form({
   toggleHabbitChosen,
   mood,
   handleMoodChange,
-  day,
+  days,
 }) {
-  //useEffect(() => {
-  //  setToLocal('day', day)
-  //}, [day])
+  useEffect(() => {
+    setToLocal('days', days)
+  }, [days])
 
   useEffect(() => {
     setToLocal('habits', habits)

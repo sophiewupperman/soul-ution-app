@@ -14,9 +14,7 @@ const Grid = styled.div`
 
 export default function App() {
   const dateToday = new Date().toLocaleDateString()
-  const yesterdaysDate = new Date(
-    new Date().getTime() - 1000 * 60 * 60 * 24 * 1
-  )
+  const dateYesterday = new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 1)
 
   const [habits, setHabits] = useState(
     getFromLocal('habits') || [
@@ -28,6 +26,7 @@ export default function App() {
       { date: dateToday, name: 'NOURISHMENT', isChosen: false },
     ]
   )
+  console.log(habits)
 
   const toggleHabbitChosen = index => {
     const newHabits = [...habits]
@@ -42,18 +41,24 @@ export default function App() {
 
   const handleMoodChange = event => {
     setInputValue(event.target.value)
-    console.log(mood)
   }
+  console.log(mood)
 
-  const [day, setDay] = useState(
-    getFromLocal('day') || [
+  const [days, setDays] = useState(getFromLocal('days') || [])
+
+  const addNewDay = () => {
+    setDays([
+      ...days,
       {
         date: dateToday,
         mood: mood,
         habits: [habits],
       },
-    ]
-  )
+    ])
+    // some function which should run once a day
+    if (!hasOneDayPassed())
+      return setDays(false && addNewDayHabit() && addNewDayMood())
+  }
 
   function hasOneDayPassed() {
     // if there's a date in localstorage and it's equal to the above:
@@ -63,19 +68,10 @@ export default function App() {
     else if (localStorage.day.date === !dateToday) return true
   }
 
-  function addNewDay() {
-    // some function which should run once a day
-    if (!hasOneDayPassed())
-      return setDay(false && addNewDayHabit() && addNewDayMood())
-  }
+  const yesterday = days.find(yesterday => yesterday.date === dateYesterday)
 
-  const yesterday = [
-    {
-      date: yesterdaysDate,
-      mood: mood,
-      habits: [...habits],
-    },
-  ]
+  console.log(yesterday)
+  console.log(days)
 
   function addNewDayHabit() {
     const yesterdaysHabits = yesterday.habits
