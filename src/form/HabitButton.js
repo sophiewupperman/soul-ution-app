@@ -19,12 +19,19 @@ const StyledHabitButton = styled.button`
   font-size: 20px;
 `
 
-const HabitButton = ({ habit, toggleHabbitChosen, index, isChosen }) => {
+const HabitButton = ({
+  habit,
+  toggleHabbitChosen,
+  index,
+  isChosen,
+  todaysDate,
+}) => {
   return (
     <StyledButttonForm>
       <StyledHabitButton
         active={isChosen} //das ist das argument für den parameter in background-color - die property die angespochen wird
         onClick={() => toggleHabbitChosen(index)}
+        date={todaysDate}
       >
         {habit.name}
       </StyledHabitButton>

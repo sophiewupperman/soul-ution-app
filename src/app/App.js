@@ -6,15 +6,20 @@ import Navigation from './Navigation'
 import Stats from '../stats/Stats'
 import Form from '../form/Form'
 import { getFromLocal } from '../services'
-//import { moment } from 'moment'
 
 const Grid = styled.div`
   display: grid;
 `
 
 export default function App() {
-  const dateToday = new Date().toLocaleDateString()
-  const dateYesterday = new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 1)
+  const moment = require('moment')
+
+  const dateToday = moment().format('YYYY-MM-DD')
+  const dateYesterday = moment()
+    .subtract(1, 'day')
+    .format('YYYY-MM-DD')
+  console.log(dateToday)
+  console.log(dateYesterday)
 
   const [habits, setHabits] = useState(
     getFromLocal('habits') || [
@@ -28,23 +33,82 @@ export default function App() {
   )
   console.log(habits)
 
+  /*const yesterdaysHabit = habits.find(habit => habit.date === dateYesterday)
+  console.log(yesterdaysHabit)*/
+
   const toggleHabbitChosen = index => {
     const newHabits = [...habits]
     newHabits[index].isChosen = !habits[index].isChosen
     setHabits(newHabits)
-    console.log(habits)
   }
 
-  const [mood, setInputValue] = useState(
-    getFromLocal('mood') || { date: dateToday, mood: 100 }
+  /* function addNewDayHabit() {
+    const yesterdaysHabits = yesterday.habits
+
+    if (yesterdaysHabits.active) {
+      return $("HabitStreak").css("width","calc(100% + 40px)")
+    } else if (!yesterdaysHabits.active) {
+      return habits
+    }
+  }*/
+
+  const [moodValue, setInputValue] = useState(
+    getFromLocal('moodValue') || '100'
   )
 
   const handleMoodChange = event => {
     setInputValue(event.target.value)
   }
-  console.log(mood)
 
-  const [days, setDays] = useState(getFromLocal('days') || [])
+  const [mood, setMood] = useState([])
+
+  const handleAddNewMoodDay = e => {
+    e.preventDefault()
+
+    setMood([...mood, { date: dateToday, mood: moodValue }])
+  }
+  console.log(moodValue)
+
+  /*const yesterdaysMood = mood.find(moodItem => moodItem.date === dateYesterday)
+  console.log(yesterdaysMood)
+
+  /*const handleMoodChange = event => {
+    const newMood = [...mood]
+    if (yesterdaysMood === true) {
+      return newMood && event.target.value
+    } else {
+      return setInputValue(newMood && event.target.value)
+    }
+  }
+  console.log(mood)*/
+
+  const addNewDay = () => {
+    // some function which should run once a day
+    if (!hasOneDayPassed())
+      return false && toggleHabbitChosen() && handleAddNewMoodDay()
+  }
+
+  function hasOneDayPassed() {
+    if (localStorage.day.date === dateToday) return false
+    else if (localStorage.day.date === !dateToday) return true
+  }
+
+  /*const [days, setDays] = useState(
+    getFromLocal('days') || [
+      {
+        date: dateToday,
+        mood: 100,
+        habits: [
+          { date: dateToday, name: 'EXERCISE', isChosen: false },
+          { date: dateToday, name: 'SLEEP', isChosen: false },
+          { date: dateToday, name: 'VITAMIN D', isChosen: false },
+          { date: dateToday, name: 'JOURNAL', isChosen: false },
+          { date: dateToday, name: 'SOCIAL', isChosen: false },
+          { date: dateToday, name: 'NOURISHMENT', isChosen: false },
+        ],
+      },
+    ]
+  )
 
   const addNewDay = () => {
     setDays([
@@ -59,6 +123,7 @@ export default function App() {
     if (!hasOneDayPassed())
       return setDays(false && addNewDayHabit() && addNewDayMood())
   }
+  console.log(days)
 
   function hasOneDayPassed() {
     // if there's a date in localstorage and it's equal to the above:
@@ -66,30 +131,7 @@ export default function App() {
     if (localStorage.day.date === dateToday) return false
     // this portion of logic occurs when a day has passed
     else if (localStorage.day.date === !dateToday) return true
-  }
-
-  const yesterday = days.find(yesterday => yesterday.date === dateYesterday)
-
-  console.log(yesterday)
-  console.log(days)
-
-  function addNewDayHabit() {
-    const yesterdaysHabits = yesterday.habits
-
-    if (yesterdaysHabits.active) {
-      return (habits.width = +'40px')
-    } else if (!yesterdaysHabits.active) {
-      return habits
-    }
-  }
-
-  function addNewDayMood() {
-    const yesterdaysMood = yesterday.mood
-    return {
-      mood,
-      yesterdaysMood,
-    }
-  }
+  }*/
 
   return (
     <Router>
@@ -98,7 +140,7 @@ export default function App() {
         <Route
           exact
           path="/"
-          render={({ history }) => <Stats habits={habits} mood={mood} />}
+          render={({ history }) => <Stats habits={habits} mood={moodValue} />}
         />
 
         <Route
@@ -108,7 +150,7 @@ export default function App() {
               habits={habits}
               setHabits={setHabits}
               toggleHabbitChosen={toggleHabbitChosen} //führt die obere function toggleHabitChange
-              mood={mood}
+              mood={moodValue}
               setInputValue={setInputValue}
               handleMoodChange={handleMoodChange}
               addNewDay={addNewDay}

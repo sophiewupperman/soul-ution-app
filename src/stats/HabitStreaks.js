@@ -11,7 +11,8 @@ const StyledHabitStreaks = styled.section`
 const StyledHabitStreak = styled.div`
   background: ${props => (props.active ? '#5e6a7e' : 'none')};
   margin-bottom: 25px;
-  min-width: 30px;
+  min-width: 30px
+    ${props => (props.active && props.dateYesterday ? '+40px' : 'none')};
   min-height: 30px;
   border-radius: 20px;
 `
@@ -48,6 +49,7 @@ export default function HabitStreak({ habits }) {
           return (
             <StyledHabitStreak
               active={habit.isChosen}
+              dateYesterday={habit.dateYesterday}
               value={habit}
               index={index}
               key={index}

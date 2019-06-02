@@ -15,16 +15,8 @@ const StyledLineChart = styled.div`
   margin-bottom: 50px;
 `
 
-export default function MoodStat({ yesterday, mood /*prevMood*/ }) {
+export default function MoodStat({ mood, moodValue, date /*prevMood*/ }) {
   // const prevMood = [...mood]
-
-  const data = [
-    ...[
-      {
-        mood: mood,
-      },
-    ],
-  ]
 
   return (
     <StyledMoodStat>
@@ -33,8 +25,10 @@ export default function MoodStat({ yesterday, mood /*prevMood*/ }) {
         <LineChart
           width={400}
           height={145}
-          data={data}
           margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+          data={mood.map(oneMood => (oneMood, date) => {
+            return <point mood={oneMood} key={date} />
+          })}
         >
           <Line type="monotone" dataKey="mood" stroke="#F1F5FA" yAxisId={0} />
         </LineChart>
