@@ -10,7 +10,7 @@ const StyledMoodSlider = styled.div`
 
 export default function MoodSlider({
   handleMoodChange,
-  mood,
+  moods,
   moodValue,
   todaysDate,
 }) {
