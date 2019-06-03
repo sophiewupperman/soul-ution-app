@@ -14,7 +14,7 @@ const StyledForm = styled.div`
 export default function Form({
   habits,
   toggleHabbitChosen,
-  mood,
+  moods,
   moodValue,
   handleMoodChange,
   //days,
@@ -28,13 +28,17 @@ export default function Form({
   }, [habits])
 
   useEffect(() => {
-    setToLocal('mood', mood)
-  }, [mood])
+    setToLocal('moodValue', moodValue)
+  }, [moodValue])
+
+  useEffect(() => {
+    setToLocal('moods', moods)
+  }, [moods])
 
   return (
     <StyledForm>
       <h1>SOUL OUTION</h1>
-      <MoodSlider handleMoodChange={handleMoodChange} mood={moodValue} />
+      <MoodSlider handleMoodChange={handleMoodChange} moodValue={moodValue} />
       <p>Maintained your habits?</p>
       {habits.map((habit, index) => (
         <HabitButton

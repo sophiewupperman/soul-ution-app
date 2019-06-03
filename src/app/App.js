@@ -52,22 +52,23 @@ export default function App() {
     }
   }*/
 
-  const [moodValue, setInputValue] = useState(
+  const [moodValue, setInputValueMood] = useState(
     getFromLocal('moodValue') || '100'
   )
 
   const handleMoodChange = event => {
-    setInputValue(event.target.value)
+    setInputValueMood(event.target.value)
   }
 
-  const [mood, setMood] = useState([])
+  const [moods, setMoods] = useState(getFromLocal('moods') || [])
 
   const handleAddNewMoodDay = e => {
     e.preventDefault()
 
-    setMood([...mood, { date: dateToday, mood: moodValue }])
+    setMoods([...moods, { date: dateToday, mood: moodValue }])
   }
   console.log(moodValue)
+  console.log(moods)
 
   /*const yesterdaysMood = mood.find(moodItem => moodItem.date === dateYesterday)
   console.log(yesterdaysMood)
@@ -84,13 +85,12 @@ export default function App() {
 
   const addNewDay = () => {
     // some function which should run once a day
-    if (!hasOneDayPassed())
-      return false && toggleHabbitChosen() && handleAddNewMoodDay()
+    if (!hasOneDayPassed()) return false && handleAddNewMoodDay()
   }
 
   function hasOneDayPassed() {
-    if (localStorage.day.date === dateToday) return false
-    else if (localStorage.day.date === !dateToday) return true
+    if (localStorage.mood.date === dateToday) return false
+    else if (localStorage.mood.date === !dateToday) return true
   }
 
   /*const [days, setDays] = useState(
@@ -151,7 +151,7 @@ export default function App() {
               setHabits={setHabits}
               toggleHabbitChosen={toggleHabbitChosen} //führt die obere function toggleHabitChange
               mood={moodValue}
-              setInputValue={setInputValue}
+              setInputValueMood={setInputValueMood}
               handleMoodChange={handleMoodChange}
               addNewDay={addNewDay}
             />

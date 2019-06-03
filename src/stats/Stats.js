@@ -3,11 +3,11 @@ import MoodStat from './MoodStat'
 import HabitStreak from './HabitStreaks'
 import Calendar from './Calendar'
 
-export default function Stats({ habits, mood }) {
+export default function Stats({ habits, moods }) {
   return (
     <>
       <Calendar />
-      <MoodStat mood={mood} />
+      <MoodStat moods={moods} />
       <HabitStreak habits={habits} />
     </>
   )
