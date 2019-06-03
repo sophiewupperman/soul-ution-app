@@ -42,16 +42,6 @@ export default function App() {
     setHabits(newHabits)
   }
 
-  /* function addNewDayHabit() {
-    const yesterdaysHabits = yesterday.habits
-
-    if (yesterdaysHabits.active) {
-      return $("HabitStreak").css("width","calc(100% + 40px)")
-    } else if (!yesterdaysHabits.active) {
-      return habits
-    }
-  }*/
-
   const [moodValue, setInputValueMood] = useState(
     getFromLocal('moodValue') || '100'
   )
@@ -70,21 +60,14 @@ export default function App() {
   console.log(moodValue)
   console.log(moods)
 
-  /*const yesterdaysMood = mood.find(moodItem => moodItem.date === dateYesterday)
-  console.log(yesterdaysMood)
+  const mood = moods.map(mood => {
+    return mood
+  })
 
-  /*const handleMoodChange = event => {
-    const newMood = [...mood]
-    if (yesterdaysMood === true) {
-      return newMood && event.target.value
-    } else {
-      return setInputValue(newMood && event.target.value)
-    }
-  }
-  console.log(mood)*/
+  console.log(mood)
 
   const addNewDay = () => {
-    // some function which should run once a day
+    // function which should run once a day
     if (!hasOneDayPassed()) return false && handleAddNewMoodDay()
   }
 
@@ -99,12 +82,12 @@ export default function App() {
         date: dateToday,
         mood: 100,
         habits: [
-          { date: dateToday, name: 'EXERCISE', isChosen: false },
-          { date: dateToday, name: 'SLEEP', isChosen: false },
-          { date: dateToday, name: 'VITAMIN D', isChosen: false },
-          { date: dateToday, name: 'JOURNAL', isChosen: false },
-          { date: dateToday, name: 'SOCIAL', isChosen: false },
-          { date: dateToday, name: 'NOURISHMENT', isChosen: false },
+          { name: 'EXERCISE', isChosen: false },
+          { name: 'SLEEP', isChosen: false },
+          { name: 'VITAMIN D', isChosen: false },
+          { name: 'JOURNAL', isChosen: false },
+          { name: 'SOCIAL', isChosen: false },
+          { name: 'NOURISHMENT', isChosen: false },
         ],
       },
     ]
@@ -119,17 +102,13 @@ export default function App() {
         habits: [habits],
       },
     ])
-    // some function which should run once a day
     if (!hasOneDayPassed())
       return setDays(false && addNewDayHabit() && addNewDayMood())
   }
   console.log(days)
 
   function hasOneDayPassed() {
-    // if there's a date in localstorage and it's equal to the above:
-    // inferring a day has yet to pass since both dates are equal.
     if (localStorage.day.date === dateToday) return false
-    // this portion of logic occurs when a day has passed
     else if (localStorage.day.date === !dateToday) return true
   }*/
 
