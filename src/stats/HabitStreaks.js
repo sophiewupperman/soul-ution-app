@@ -12,7 +12,7 @@ const StyledHabitStreak = styled.div`
   background: ${props => (props.active ? '#5e6a7e' : 'none')};
   margin-bottom: 25px;
   min-width: 30px
-   /* ${props => (props.active && props.dateYesterday ? '+40px' : 'none')};*/
+    ${props => (props.active && props.dateYesterday ? '+40px' : 'none')};
   min-height: 30px;
   border-radius: 20px;
 `
@@ -60,6 +60,16 @@ export default function HabitStreak({ habits }) {
     </div>
   )
 }
+
+/* function addNewDayHabit() {
+    const yesterdaysHabits = yesterday.habits
+
+    if (yesterdaysHabits.active) {
+      return $("HabitStreak").css("width","calc(100% + 40px)")
+    } else if (!yesterdaysHabits.active) {
+      return habits
+    }
+  }*/
 
 /*<StyledHabitStreaks>
 {habits.map((habit, index) => {
