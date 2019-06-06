@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import MoodSlider from './MoodSlider'
 import HabitButton from './HabitButton'
-import { setToLocal } from '../services'
 
 const StyledForm = styled.div`
   display: grid;
@@ -12,43 +11,45 @@ const StyledForm = styled.div`
 `
 
 export default function Form({
+  days,
   habits,
   toggleHabbitChosen,
-  moods,
   moodValue,
   handleMoodChange,
-  //days,
 }) {
-  /*useEffect(() => {
-    setToLocal('days', days)
-  }, [days])*/
-
-  useEffect(() => {
-    setToLocal('habits', habits)
-  }, [habits])
-
-  useEffect(() => {
-    setToLocal('moodValue', moodValue)
-  }, [moodValue])
-
-  useEffect(() => {
-    setToLocal('moods', moods)
-  }, [moods])
+  /* originalArray.map(object => object.b); */
+  // const dayHabits = days.map(day => day.habits)
 
   return (
-    <StyledForm>
+    <StyledForm days={days}>
       <h1>SOUL OUTION</h1>
       <MoodSlider handleMoodChange={handleMoodChange} moodValue={moodValue} />
       <p>Maintained your habits?</p>
-      {habits.map((habit, index) => (
-        <HabitButton
-          habit={habit} //why? ... habit in der arrow funktion steht (name) für ein einzelndes object in dem array - in der HabitButton Datei wird das weiter gegeben als prop {habit} um den namen aus dem objekt oben zu bekommen - the VALUE of HabitButton is one single object from the habits array called habit - this is how you get the Tag to have a meaning/value
-          index={index} //the second parameter defines the index
-          toggleHabbitChosen={toggleHabbitChosen} //führt die obere function toggleHabitChange
-          key={habit.name}
-          isChosen={habit.isChosen}
-        />
-      ))}
+      {habits.map((habit, index) => {
+        return (
+          <HabitButton
+            habit={habit} //why? ... habit in der arrow funktion steht (name) für ein einzelndes object in dem array - in der HabitButton Datei wird das weiter gegeben als prop {habit} um den namen aus dem objekt oben zu bekommen - the VALUE of HabitButton is one single object from the habits array called habit - this is how you get the Tag to have a meaning/value
+            index={index} //the second parameter defines the index
+            toggleHabbitChosen={toggleHabbitChosen} //führt die obere function toggleHabitChange
+            key={habit.name}
+            isChosen={habit.isChosen}
+          />
+        )
+      })}
     </StyledForm>
   )
 }
+
+// {days.map((day, index) =>
+//   day.habits.map((habit, index) => {
+//     return (
+//       <HabitButton
+//         habit={habit} //why? ... habit in der arrow funktion steht (name) für ein einzelndes object in dem array - in der HabitButton Datei wird das weiter gegeben als prop {habit} um den namen aus dem objekt oben zu bekommen - the VALUE of HabitButton is one single object from the habits array called habit - this is how you get the Tag to have a meaning/value
+//         index={index} //the second parameter defines the index
+//         toggleHabbitChosen={toggleHabbitChosen} //führt die obere function toggleHabitChange
+//         key={habit.name}
+//         isChosen={habit.isChosen}
+//       />
+//     )
+//   })
+// )}

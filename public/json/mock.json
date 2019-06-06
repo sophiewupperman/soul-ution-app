@@ -1,0 +1,38 @@
+[
+  {
+    "date": "2019-06-02",
+    "mood": "40",
+    "habits": [
+      { "name": "EXERCISE", "isChosen": true },
+      { "name": "SLEEP", "isChosen": false },
+      { "name": "VITAMIN D", "isChosen": true },
+      { "name": "JOURNAL", "isChosen": false },
+      { "name": "SOCIAL", "isChosen": false },
+      { "name": "NOURISHMENT", "isChosen": false }
+    ]
+  },
+  {
+    "date": "2019-06-03",
+    "mood": "50",
+    "habits": [
+      { "name": "EXERCISE", "isChosen": true },
+      { "name": "SLEEP", "isChosen": false },
+      { "name": "VITAMIN D", "isChosen": true },
+      { "name": "JOURNAL", "isChosen": false },
+      { "name": "SOCIAL", "isChosen": false },
+      { "name": "NOURISHMENT", "isChosen": false }
+    ]
+  },
+  {
+    "date": "2019-06-04",
+    "mood": "60",
+    "habits": [
+      { "name": "EXERCISE", "isChosen": true },
+      { "name": "SLEEP", "isChosen": false },
+      { "name": "VITAMIN D", "isChosen": true },
+      { "name": "JOURNAL", "isChosen": false },
+      { "name": "SOCIAL", "isChosen": false },
+      { "name": "NOURISHMENT", "isChosen": false }
+    ]
+  }
+]

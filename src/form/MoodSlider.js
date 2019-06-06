@@ -8,18 +8,10 @@ const StyledMoodSlider = styled.div`
   margin-bottom: 10px;
 `
 
-export default function MoodSlider({
-  handleMoodChange,
-  moods,
-  moodValue,
-  todaysDate,
-}) {
+export default function MoodSlider({ handleMoodChange, moodValue }) {
   return (
     <StyledMoodSlider>
-      <label forhtml="mood">
-        How are you feeling today?
-        {moodValue}%
-      </label>
+      <label forhtml="mood">How are you feeling today? {moodValue}%</label>
       <input
         name="mood"
         type="range"
@@ -27,7 +19,6 @@ export default function MoodSlider({
         max="100"
         size="200"
         value={moodValue}
-        date={todaysDate}
         onChange={handleMoodChange}
       />
     </StyledMoodSlider>

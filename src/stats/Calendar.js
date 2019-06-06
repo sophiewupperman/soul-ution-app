@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import * as moment from 'moment'
 
 const StyledCalendar = styled.section`
   display: grid;
@@ -20,19 +21,18 @@ const StyledCurrentDate = styled.div`
   right: 0px;
 `
 
-export default function Calendar() {
+export default function Calendar({ lastSeventDays }) {
   return (
     <div>
       <StyledCurrentDate />
       <StyledCalendar>
-        <h1>M</h1>
-        <h1>T</h1>
-        <h1>W</h1>
-        <h1>T</h1>
-        <h1>F</h1>
-        <h1>S</h1>
-        <h1>S</h1>
-        <h1>M</h1>
+        {lastSeventDays.map(day => (
+          <h1>
+            {moment(day)
+              .format('dd')
+              .substring(0, 1)}
+          </h1>
+        ))}
       </StyledCalendar>
     </div>
   )

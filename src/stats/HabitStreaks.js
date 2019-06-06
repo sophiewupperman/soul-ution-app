@@ -28,8 +28,8 @@ const StyledHabitLabel = styled.label`
   position: sticky;
   left: 7px;
 `
-
-export default function HabitStreak({ habits }) {
+//map mit toUpperCase()
+export default function HabitStreak({ days, habits, lastSevenDays }) {
   return (
     <div>
       <StyledHabitLabel forhtml="exercise">EXERCISE</StyledHabitLabel>

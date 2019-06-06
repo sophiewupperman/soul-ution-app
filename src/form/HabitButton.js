@@ -20,6 +20,7 @@ const StyledHabitButton = styled.button`
 `
 
 const HabitButton = ({
+  days,
   habit,
   toggleHabbitChosen,
   index,

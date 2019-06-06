@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
-import { LineChart, Line, XAxis, YAxis } from 'recharts'
+import { LineChart, Line } from 'recharts'
 
 const StyledMoodStat = styled.section`
   display: grid;
@@ -15,8 +15,11 @@ const StyledLineChart = styled.div`
   margin-bottom: 50px;
 `
 
-export default function MoodStat({ moods, date /*prevMood*/ }) {
-  // const prevMood = [...mood]
+export default function MoodStat({ days }) {
+  const moodData = days.map(day => ({
+    date: day.date,
+    mood: day.mood,
+  }))
 
   return (
     <StyledMoodStat>
@@ -26,10 +29,8 @@ export default function MoodStat({ moods, date /*prevMood*/ }) {
           width={400}
           height={145}
           margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
-          data={67}
+          data={moodData}
         >
-          <XAxis type="number" dataKey={date} name="date" unit="cm" />
-          <YAxis type="number" dataKey={moods} name="mood" />
           <Line type="monotone" dataKey="mood" stroke="#F1F5FA" yAxisId={0} />
         </LineChart>
       </StyledLineChart>
