@@ -17,6 +17,7 @@ const StyledHabitButton = styled.button`
   text-align: center;
   text-decoration: none;
   font-size: 20px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 `
 
 const HabitButton = ({

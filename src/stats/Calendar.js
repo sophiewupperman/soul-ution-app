@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import * as moment from 'moment'
 
 const StyledCalendar = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  place-items: end;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  justify-content: space-around;
   text-align: center;
   padding: 10px;
   right: 10px;
@@ -27,7 +28,7 @@ export default function Calendar({ lastSeventDays }) {
       <StyledCurrentDate />
       <StyledCalendar>
         {lastSeventDays.map(day => (
-          <h1>
+          <h1 key={day}>
             {moment(day)
               .format('dd')
               .substring(0, 1)}
