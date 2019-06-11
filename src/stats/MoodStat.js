@@ -13,7 +13,6 @@ const StyledTitle = styled.h2`
 const StyledLineChart = styled.div`
   position: relative;
   margin-top: 30px;
-  margin-bottom: 50px;
   width: 100%;
   height: 150px;
 `
@@ -28,9 +27,9 @@ export default function MoodStat({ days }) {
     <StyledMoodStat>
       <StyledTitle>MOOD</StyledTitle>
       <StyledLineChart>
-        <ResponsiveContainer>
+        <ResponsiveContainer height="100%" width="100%">
           <LineChart
-            width={{ top: 5, right: 20, left: 10, bottom: 5 }}
+            margin={{ top: 60, right: 25, left: 20, bottom: 5 }}
             data={moodData}
           >
             <Line type="monotone" dataKey="mood" stroke="#F1F5FA" yAxisId={0} />

@@ -23,6 +23,7 @@ export default function Form({
   return (
     <StyledForm days={days}>
       <h1>SOUL UTION</h1>
+      <label forhtml="mood">How are you feeling today?</label>
       <MoodSlider handleMoodChange={handleMoodChange} moodValue={moodValue} />
       <p>Maintained your habits?</p>
       {habits.map((habit, index) => {

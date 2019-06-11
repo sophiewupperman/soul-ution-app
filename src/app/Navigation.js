@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+import { FiPlusCircle, FiBarChart2 } from 'react-icons/fi'
 
 const Wrapper = styled.nav`
   display: grid;
@@ -13,7 +14,7 @@ const Wrapper = styled.nav`
 const StyledLink = styled(NavLink)`
   height: 45px;
   text-align: center;
-  padding: 15px;
+  padding: 10px;
   align-items: center;
   color: black;
   text-decoration: none;
@@ -28,9 +29,11 @@ export default function Navigation() {
   return (
     <Wrapper>
       <StyledLink exact to="/">
-        STATISTICS
+        <FiBarChart2 size={30} />
       </StyledLink>
-      <StyledLink to="/form">LOG BOOK</StyledLink>
+      <StyledLink to="/form">
+        <FiPlusCircle size={30} />
+      </StyledLink>
     </Wrapper>
   )
 }

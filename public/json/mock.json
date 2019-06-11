@@ -1,38 +1,86 @@
 [
   {
-    "date": "2019-06-02",
-    "mood": "0",
+    "date": "2019-06-01",
+    "mood": "10",
     "habits": [
-      { "name": "EXERCISE", "isChosen": true },
-      { "name": "SLEEP", "isChosen": false },
-      { "name": "VITAMIN D", "isChosen": true },
-      { "name": "JOURNAL", "isChosen": false },
-      { "name": "SOCIAL", "isChosen": false },
-      { "name": "NOURISHMENT", "isChosen": false }
+      { "name": "EXERCISE", "color": "#5e6a7e", "isChosen": true },
+      { "name": "SLEEP", "color": "#5eff7e", "isChosen": true },
+      { "name": "VITAMIN D", "color": "#5e6a7e", "isChosen": true },
+      { "name": "JOURNAL", "color": "#5e6a7e" },
+      { "name": "SOCIAL", "color": "#5e6a7e", "isChosen": true },
+      { "name": "NOURISHMENT", "color": "#5e6a7e", "isChosen": true }
+    ]
+  },
+  {
+    "date": "2019-06-02",
+    "mood": "100",
+    "habits": [
+      { "name": "EXERCISE", "color": "#5e6a7e", "isChosen": true },
+      { "name": "SLEEP", "color": "#5eff7e", "isChosen": true },
+      { "name": "VITAMIN D", "color": "#5e6a7e", "isChosen": true },
+      { "name": "JOURNAL", "color": "#5e6a7e" },
+      { "name": "SOCIAL", "color": "#5e6a7e", "isChosen": true },
+      { "name": "NOURISHMENT", "color": "#5e6a7e", "isChosen": true }
     ]
   },
   {
     "date": "2019-06-03",
-    "mood": "50",
+    "mood": "20",
     "habits": [
-      { "name": "EXERCISE", "isChosen": true },
-      { "name": "SLEEP", "isChosen": false },
-      { "name": "VITAMIN D", "isChosen": true },
-      { "name": "JOURNAL", "isChosen": false },
-      { "name": "SOCIAL", "isChosen": false },
-      { "name": "NOURISHMENT", "isChosen": false }
+      { "name": "EXERCISE", "color": "#5e6a7e", "isChosen": true },
+      { "name": "SLEEP", "color": "#5eff7e", "isChosen": true },
+      { "name": "VITAMIN D", "color": "#5e6a7e", "isChosen": true },
+      { "name": "JOURNAL", "color": "#5e6a7e" },
+      { "name": "SOCIAL", "color": "#5e6a7e", "isChosen": true },
+      { "name": "NOURISHMENT", "color": "#5e6a7e", "isChosen": true }
     ]
   },
   {
-    "date": "2019-06-07",
+    "date": "2019-06-04",
+    "mood": "30",
+    "habits": [
+      { "name": "EXERCISE", "color": "#5e6a7e", "isChosen": true },
+      { "name": "SLEEP", "color": "#5eff7e", "isChosen": true },
+      { "name": "VITAMIN D", "color": "#5e6a7e", "isChosen": true },
+      { "name": "JOURNAL", "color": "#5e6a7e" },
+      { "name": "SOCIAL", "color": "#5e6a7e", "isChosen": true },
+      { "name": "NOURISHMENT", "color": "#5e6a7e", "isChosen": true }
+    ]
+  },
+  {
+    "date": "2019-06-05",
+    "mood": "60",
+    "habits": [
+      { "name": "EXERCISE", "color": "#5e6a7e", "isChosen": true },
+      { "name": "SLEEP", "color": "#5eff7e", "isChosen": true },
+      { "name": "VITAMIN D", "color": "#5e6a7e", "isChosen": true },
+      { "name": "JOURNAL", "color": "#5e6a7e" },
+      { "name": "SOCIAL", "color": "#5e6a7e", "isChosen": true },
+      { "name": "NOURISHMENT", "color": "#5e6a7e", "isChosen": true }
+    ]
+  },
+  {
+    "date": "2019-06-06",
+    "mood": "50",
+    "habits": [
+      { "name": "EXERCISE", "color": "#5e6a7e", "isChosen": true },
+      { "name": "SLEEP", "color": "#5eff7e", "isChosen": true },
+      { "name": "VITAMIN D", "color": "#5e6a7e", "isChosen": true },
+      { "name": "JOURNAL", "color": "#5e6a7e" },
+      { "name": "SOCIAL", "color": "#5e6a7e", "isChosen": true },
+      { "name": "NOURISHMENT", "color": "#5e6a7e", "isChosen": true }
+    ]
+  },
+  {
+    "date": "2019-06-0",
     "mood": "100",
     "habits": [
-      { "name": "EXERCISE", "isChosen": true },
-      { "name": "SLEEP", "isChosen": false },
-      { "name": "VITAMIN D", "isChosen": true },
-      { "name": "JOURNAL", "isChosen": false },
-      { "name": "SOCIAL", "isChosen": false },
-      { "name": "NOURISHMENT", "isChosen": false }
+      { "name": "EXERCISE", "color": "#5e6a7e", "isChosen": true },
+      { "name": "SLEEP", "color": "#5eff7e", "isChosen": true },
+      { "name": "VITAMIN D", "color": "#5e6a7e", "isChosen": true },
+      { "name": "JOURNAL", "color": "#5e6a7e" },
+      { "name": "SOCIAL", "color": "#5e6a7e", "isChosen": true },
+      { "name": "NOURISHMENT", "color": "#5e6a7e", "isChosen": true }
     ]
   }
 ]

@@ -7,8 +7,9 @@ import styled from 'styled-components'
 const moment = require('moment')
 
 const StyledStats = styled.section`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 2fr 4fr;
+  align-items: center;
 `
 
 export default function Stats({ habits, days }) {

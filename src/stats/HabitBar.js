@@ -11,9 +11,8 @@ import styled from 'styled-components'
 const StyledHabitStreak = styled.div`
   background: ${props => props.color || '#5e6a7e'};
   margin-bottom: 25px;
-  min-width: 30px;
+  width: 100%;
   min-height: 30px;
-  border-radius: 50%;
 `
 
 const StyledHabitBar = styled.div`
@@ -22,11 +21,11 @@ const StyledHabitBar = styled.div`
   background: #b6c1d0;
   width: 100%;
   height: 30px;
-  box-shadow: 0px 0.7px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
 
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-gap: 10px 10px;
+  z-index: -1;
 `
 
 const StyledHabitStreakContainer = styled.div`

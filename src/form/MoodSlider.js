@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FiSmile, FiFrown } from 'react-icons/fi'
 
 const StyledMoodSlider = styled.div`
   display: grid;
+  grid-auto-flow: row;
   justify-items: center;
   gap: 30px;
   margin-bottom: 10px;
@@ -11,7 +13,7 @@ const StyledMoodSlider = styled.div`
 export default function MoodSlider({ handleMoodChange, moodValue }) {
   return (
     <StyledMoodSlider>
-      <label forhtml="mood">How are you feeling today? {moodValue}%</label>
+      <FiFrown size={30} />
       <input
         name="mood"
         type="range"
@@ -21,6 +23,7 @@ export default function MoodSlider({ handleMoodChange, moodValue }) {
         value={moodValue}
         onChange={handleMoodChange}
       />
+      <FiSmile size={30} />
     </StyledMoodSlider>
   )
 }
