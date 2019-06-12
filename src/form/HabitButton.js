@@ -17,7 +17,10 @@ const StyledHabitButton = styled.button`
   text-align: center;
   text-decoration: none;
   font-size: 20px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: ${props =>
+    props.active
+      ? '0px 4px 7px rgba(0, 0, 0, 0.5)'
+      : 'inset 0 2px 4px rgba(0, 0, 0, 0.4)'};
 `
 
 const HabitButton = ({

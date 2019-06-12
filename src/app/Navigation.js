@@ -16,12 +16,10 @@ const StyledLink = styled(NavLink)`
   text-align: center;
   padding: 10px;
   align-items: center;
-  color: black;
-  text-decoration: none;
-  text-shadow: 0px 0.5px 0.5px;
+  color: white;
 
   &.active {
-    color: white;
+    color: rgba(62, 69, 85, 0.7);
   }
 `
 

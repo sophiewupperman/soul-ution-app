@@ -6,19 +6,18 @@ const StyledCalendar = styled.section`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
-  grid-column-start: 8;
-  grid-column-end: 0;
+  direction: rtl;
 `
 
 const StyledCurrentDate = styled.div`
   display: grid;
   width: calc(100% / 7);
-  height: 95vh;
   background: rgba(62, 69, 85, 0.3);
   border-radius: 13px;
   position: absolute;
   right: 0px;
   top: 0px;
+  bottom: 45px;
   z-index: -1;
 `
 

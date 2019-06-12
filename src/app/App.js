@@ -14,12 +14,12 @@ const Grid = styled.div`
 `
 
 const habits = [
-  { name: 'EXERCISE', color: '#5e6a7e' },
-  { name: 'SLEEP', color: '#9DC2D0' },
+  { name: 'EXERCISED', color: '#5e6a7e' },
+  { name: 'SLEPT WELL', color: '#9DC2D0' },
   { name: 'VITAMIN D', color: '#C69D6F' },
-  { name: 'JOURNAL', color: '#ABBFB9' },
-  { name: 'SOCIAL', color: '#CED0BC' },
-  { name: 'NOURISHMENT', color: '#87A2A9' },
+  { name: 'JOURNALED', color: '#ABBFB9' },
+  { name: 'SOCIALISED', color: '#CED0BC' },
+  { name: 'ATE HEALTHY', color: '#87A2A9' },
 ]
 
 const dateToday = moment().format('YYYY-MM-DD')

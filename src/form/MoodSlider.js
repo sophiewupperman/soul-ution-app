@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { FiSmile, FiFrown } from 'react-icons/fi'
 
 const StyledMoodSlider = styled.div`
-  display: grid;
-  grid-auto-flow: row;
   justify-items: center;
   gap: 30px;
   margin-bottom: 10px;

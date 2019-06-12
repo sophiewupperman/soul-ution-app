@@ -5,9 +5,10 @@ import HabitButton from './HabitButton'
 
 const StyledForm = styled.div`
   display: grid;
+  height: 100vh;
   justify-items: center;
   gap: 10px;
-  padding: 20px;
+  padding-bottom: 45px;
 `
 
 export default function Form({
@@ -24,6 +25,7 @@ export default function Form({
     <StyledForm days={days}>
       <h1>SOUL UTION</h1>
       <label forhtml="mood">How are you feeling today?</label>
+      {moodValue}%
       <MoodSlider handleMoodChange={handleMoodChange} moodValue={moodValue} />
       <p>Maintained your habits?</p>
       {habits.map((habit, index) => {
