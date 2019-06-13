@@ -21,8 +21,8 @@ export default function Stats({ habits, days }) {
 
   return (
     <StyledStats>
-      <Calendar lastSeventDays={lastSevenDays} />
-      <MoodStat days={days} />
+      <Calendar lastSevenDays={lastSevenDays} />
+      <MoodStat days={days} lastSevenDays={lastSevenDays} />
       <HabitStreak lastSevenDays={lastSevenDays} habits={habits} days={days} />
     </StyledStats>
   )

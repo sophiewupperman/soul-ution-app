@@ -18,11 +18,10 @@ const StyledHabitStreak = styled.div`
 const StyledHabitBar = styled.div`
   margin-bottom: 3.5px;
   margin-top: 3.5px;
-  background: #b6c1d0;
+  background: rgba(182, 193, 208, 0, 0.3);
   width: 100%;
   height: 30px;
-  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
-
+  box-shadow: 0px 0px 9px 2px rgba(255, 255, 255, 0.3);
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 `

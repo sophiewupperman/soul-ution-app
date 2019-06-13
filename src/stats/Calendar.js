@@ -7,6 +7,7 @@ const StyledCalendar = styled.section`
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
   direction: rtl;
+  margin: 0px;
 `
 
 const StyledCurrentDate = styled.div`
@@ -21,17 +22,24 @@ const StyledCurrentDate = styled.div`
   z-index: -1;
 `
 
-export default function Calendar({ lastSeventDays }) {
+export default function Calendar({ lastSevenDays }) {
   return (
     <div>
       <StyledCurrentDate />
       <StyledCalendar>
-        {lastSeventDays.map(day => (
-          <h1 key={day}>
+        {lastSevenDays.map(day => (
+          <p style={{ fontSize: '23px', margin: '0px' }} key={day}>
             {moment(day)
               .format('dd')
               .substring(0, 1)}
-          </h1>
+          </p>
+        ))}
+        {lastSevenDays.map(day => (
+          <p style={{ fontSize: '11px', margin: '0px' }} key={day}>
+            {moment(day)
+              .format('DD/M')
+              .substring(0, 5)}
+          </p>
         ))}
       </StyledCalendar>
     </div>

@@ -14,7 +14,7 @@ const Wrapper = styled.nav`
 const StyledLink = styled(NavLink)`
   height: 45px;
   text-align: center;
-  padding: 10px;
+  padding: 0px;
   align-items: center;
   color: white;
 
@@ -27,10 +27,10 @@ export default function Navigation() {
   return (
     <Wrapper>
       <StyledLink exact to="/">
-        <FiBarChart2 size={30} />
+        <FiBarChart2 size={40} />
       </StyledLink>
       <StyledLink to="/form">
-        <FiPlusCircle size={30} />
+        <FiPlusCircle size={40} />
       </StyledLink>
     </Wrapper>
   )

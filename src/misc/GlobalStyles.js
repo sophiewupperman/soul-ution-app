@@ -7,7 +7,7 @@ export default createGlobalStyle`
 
 
   body {
-    font-family: 'montserrat';
+    font-family: 'Nunito';
     color: #f1f5fa;
     margin: 0px;
     background: #8692A4;
