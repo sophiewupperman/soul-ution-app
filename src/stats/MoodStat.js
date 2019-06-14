@@ -1,13 +1,20 @@
 import styled from 'styled-components'
 import React from 'react'
-import { LineChart, Line, ResponsiveContainer, XAxis, Tooltip } from 'recharts'
+import {
+  LineChart,
+  Line,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+  Tooltip,
+} from 'recharts'
 const moment = require('moment')
 
 const StyledMoodStat = styled.section`
   display: flex;
   flex-direction: column;
 `
-const StyledTitle = styled.h2`
+const StyledTitle = styled.label`
   position: fixed;
   left: 7px;
 `
@@ -36,20 +43,21 @@ export default function MoodStat({ days, lastSevenDays }) {
   console.log(moodData.date)
   return (
     <StyledMoodStat>
-      <StyledTitle>MOOD</StyledTitle>
-      <StyledLineChart>
+      <StyledTitle forhtml="moodLineChart">MOOD</StyledTitle>
+      <StyledLineChart name="moodLineChart">
         <ResponsiveContainer height="100%" width="100%">
           <LineChart
-            margin={{ top: 35, right: 25, left: 25, bottom: 0 }}
+            margin={{ top: 30, right: 25, left: 25, bottom: 0 }}
             data={moodData}
           >
             <Line type="monotone" dataKey="mood" stroke="#F1F5FA" yAxisId={0} />
+            <YAxis />
             <XAxis
               dataKey="date"
               tick={{ fontSize: 5 }}
               ticks={lastSevenDays}
               interval={0}
-              axisLine={false}
+              //axisLine={false}
             />
           </LineChart>
         </ResponsiveContainer>

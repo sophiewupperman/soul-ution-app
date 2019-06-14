@@ -28,7 +28,7 @@ export default function Calendar({ lastSevenDays }) {
       <StyledCurrentDate />
       <StyledCalendar>
         {lastSevenDays.map(day => (
-          <p style={{ fontSize: '23px', margin: '0px' }} key={day}>
+          <p style={{ fontSize: '30px', margin: '0px' }} key={day}>
             {moment(day)
               .format('dd')
               .substring(0, 1)}

@@ -18,6 +18,6 @@ h1{
 }
   h2 {
     margin: 0;
-    font-size: 20px;
+    font-size: 17px;
   }
 `

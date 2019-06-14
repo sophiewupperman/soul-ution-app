@@ -22,15 +22,65 @@ const habits = [
   { name: 'ATE HEALTHY', color: '#87A2A9' },
 ]
 
-const dateToday = moment().format('YYYY-MM-DD')
+const dateSixDaysBefore = moment()
+  .subtract(7, 'day')
+  .format('YYYY-MM-DD')
 
-// const dateYesterday = moment()
-//   .subtract(1, 'day')
-//   .format('YYYY-MM-DD')
+const dateFiveDaysBefore = moment()
+  .subtract(6, 'day')
+  .format('YYYY-MM-DD')
+
+const dateFourDaysBefore = moment()
+  .subtract(5, 'day')
+  .format('YYYY-MM-DD')
+
+const dateThreeDaysBefore = moment()
+  .subtract(3, 'day')
+  .format('YYYY-MM-DD')
+
+const dateTwoDaysBefore = moment()
+  .subtract(2, 'day')
+  .format('YYYY-MM-DD')
+
+const dateYesterday = moment()
+  .subtract(1, 'day')
+  .format('YYYY-MM-DD')
+
+const dateToday = moment().format('YYYY-MM-DD')
 
 export default function App() {
   const [days, setDays] = useState(
     getFromLocal('days') || [
+      {
+        date: dateSixDaysBefore,
+        mood: '100',
+        habits: habits,
+      },
+      {
+        date: dateFiveDaysBefore,
+        mood: '100',
+        habits: habits,
+      },
+      {
+        date: dateFourDaysBefore,
+        mood: '100',
+        habits: habits,
+      },
+      {
+        date: dateThreeDaysBefore,
+        mood: '100',
+        habits: habits,
+      },
+      {
+        date: dateTwoDaysBefore,
+        mood: '100',
+        habits: habits,
+      },
+      {
+        date: dateYesterday,
+        mood: '',
+        habits: habits,
+      },
       {
         date: dateToday,
         mood: '100',
