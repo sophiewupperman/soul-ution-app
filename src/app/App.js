@@ -53,17 +53,17 @@ export default function App() {
     getFromLocal('days') || [
       {
         date: dateSixDaysBefore,
-        mood: '100',
+        mood: '80',
         habits: habits,
       },
       {
         date: dateFiveDaysBefore,
-        mood: '100',
+        mood: '20',
         habits: habits,
       },
       {
         date: dateFourDaysBefore,
-        mood: '100',
+        mood: '40',
         habits: habits,
       },
       {
@@ -73,7 +73,7 @@ export default function App() {
       },
       {
         date: dateTwoDaysBefore,
-        mood: '100',
+        mood: '40',
         habits: habits,
       },
       {

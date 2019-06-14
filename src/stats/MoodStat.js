@@ -47,17 +47,15 @@ export default function MoodStat({ days, lastSevenDays }) {
       <StyledLineChart name="moodLineChart">
         <ResponsiveContainer height="100%" width="100%">
           <LineChart
-            margin={{ top: 30, right: 25, left: 25, bottom: 0 }}
+            margin={{ top: 30, right: 25, left: -33, bottom: 15 }}
             data={moodData}
           >
             <Line type="monotone" dataKey="mood" stroke="#F1F5FA" yAxisId={0} />
-            <YAxis />
-            <XAxis
-              dataKey="date"
-              tick={{ fontSize: 5 }}
-              ticks={lastSevenDays}
-              interval={0}
-              //axisLine={false}
+            <YAxis
+              axisLine={false}
+              tickLine={false}
+              ticks={[0, 50, 100]}
+              tick={{ fill: 'white', fontSize: 12, dx: 20 }}
             />
           </LineChart>
         </ResponsiveContainer>
@@ -86,8 +84,17 @@ export default function MoodStat({ days, lastSevenDays }) {
 //                     .substring(0, 5)
 //                 )
 // //
+{
+  /* <XAxis
+              dataKey="date"
+              tick={{ fontSize: 5 }}
+              ticks={lastSevenDays}
+              interval={0}
+              //axisLine={false}
+            />
 
-// [
+// [ */
+}
 //   '2019-06-06',
 //   '2019-06-07',
 //   '2019-06-08',
