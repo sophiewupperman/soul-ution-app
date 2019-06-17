@@ -22,65 +22,17 @@ const habits = [
   { name: 'ATE HEALTHY', color: '#87A2A9' },
 ]
 
-const dateSixDaysBefore = moment()
-  .subtract(7, 'day')
-  .format('YYYY-MM-DD')
-
-const dateFiveDaysBefore = moment()
-  .subtract(6, 'day')
-  .format('YYYY-MM-DD')
-
-const dateFourDaysBefore = moment()
-  .subtract(5, 'day')
-  .format('YYYY-MM-DD')
-
-const dateThreeDaysBefore = moment()
-  .subtract(3, 'day')
-  .format('YYYY-MM-DD')
-
-const dateTwoDaysBefore = moment()
-  .subtract(2, 'day')
-  .format('YYYY-MM-DD')
-
 const dateYesterday = moment()
   .subtract(1, 'day')
   .format('YYYY-MM-DD')
 
 const dateToday = moment().format('YYYY-MM-DD')
 
+const midnight = moment().format('LTS') === '10:11:00 PM' ? true : false
+
 export default function App() {
   const [days, setDays] = useState(
     getFromLocal('days') || [
-      {
-        date: dateSixDaysBefore,
-        mood: '80',
-        habits: habits,
-      },
-      {
-        date: dateFiveDaysBefore,
-        mood: '20',
-        habits: habits,
-      },
-      {
-        date: dateFourDaysBefore,
-        mood: '40',
-        habits: habits,
-      },
-      {
-        date: dateThreeDaysBefore,
-        mood: '100',
-        habits: habits,
-      },
-      {
-        date: dateTwoDaysBefore,
-        mood: '40',
-        habits: habits,
-      },
-      {
-        date: dateYesterday,
-        mood: '',
-        habits: habits,
-      },
       {
         date: dateToday,
         mood: '100',
@@ -110,6 +62,16 @@ export default function App() {
     saveDay({ ...today, mood: event.target.value })
   }
 
+  function getCurrentDay() {
+    return days.find(day => day.date === dateToday)
+  }
+
+  const currentDay = getCurrentDay()
+
+  //const yesterdaysData = days.find(day => day.date === dateYesterday)
+
+  //console.log(yesterdaysData)
+
   function saveDay(newDay) {
     const newDays = days.slice()
     const index = days.findIndex(day => newDay.date === day.date)
@@ -118,14 +80,43 @@ export default function App() {
       ...newDay,
     }
 
-    setDays(newDays)
+    // setDays(newDays)
+
+    // setTimeout(
+    //   setDays(newDays.push(yesterdaysData) && newDays.shift(), midnight)
+    // )
+    setTimeout(setDays(newDays.push(newDay) && newDays.shift()), midnight)
   }
 
-  function getCurrentDay() {
-    return days.find(day => day.date === dateToday)
-  }
+  //push today or do you push yesterday ? or both? neues leeres 0bjekt hinzufügen
 
-  const currentDay = getCurrentDay()
+  // useState(
+  //   setTimeout(
+  //     days.push({
+  //       date: dateToday,
+  //       mood: 'mood',
+  //       habits: habits,
+  //     })
+  //   ),
+  //   midnight
+  // )
+
+  // useState(
+  //   setTimeout(
+  //     days.shift({
+  //       date: dateToday,
+  //       mood: 'mood',
+  //       habits: habits,
+  //     })
+  //   ),
+  //   midnight
+  // )
+
+  // setTimeout(useState(days.push({
+  //   date: dateToday,
+  //   mood: 'mood',
+  //   habits: habits,
+  // })), newDay)
 
   return (
     <Router>
