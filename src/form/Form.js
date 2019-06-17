@@ -28,17 +28,18 @@ export default function Form({
       {moodValue}%
       <MoodSlider handleMoodChange={handleMoodChange} moodValue={moodValue} />
       <p>Maintained your habits?</p>
-      {habits.map((habit, index) => {
-        return (
-          <HabitButton
-            habit={habit} //why? ... habit in der arrow funktion steht (name) für ein einzelndes object in dem array - in der HabitButton Datei wird das weiter gegeben als prop {habit} um den namen aus dem objekt oben zu bekommen - the VALUE of HabitButton is one single object from the habits array called habit - this is how you get the Tag to have a meaning/value
-            index={index} //the second parameter defines the index
-            toggleHabbitChosen={toggleHabbitChosen} //führt die obere function toggleHabitChange
-            key={habit.name}
-            isChosen={habit.isChosen}
-          />
-        )
-      })}
+      {habits &&
+        habits.map((habit, index) => {
+          return (
+            <HabitButton
+              habit={habit} //why? ... habit in der arrow funktion steht (name) für ein einzelndes object in dem array - in der HabitButton Datei wird das weiter gegeben als prop {habit} um den namen aus dem objekt oben zu bekommen - the VALUE of HabitButton is one single object from the habits array called habit - this is how you get the Tag to have a meaning/value
+              index={index} //the second parameter defines the index
+              toggleHabbitChosen={toggleHabbitChosen} //führt die obere function toggleHabitChange
+              key={habit.name}
+              isChosen={habit.isChosen}
+            />
+          )
+        })}
     </StyledForm>
   )
 }

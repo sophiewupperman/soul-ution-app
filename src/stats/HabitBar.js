@@ -41,9 +41,8 @@ export default function HabitBar({ habit, lastSevenDays, days }) {
     const currentHabit =
       currentDay && currentDay.habits.find(h => h.name === habit.name)
     const habitChosen = currentHabit && currentHabit.isChosen
-
     return (
-      <StyledHabitStreakContainer>
+      <StyledHabitStreakContainer key={day}>
         {habitChosen ? <StyledHabitStreak color={habit.color} /> : <div />}
       </StyledHabitStreakContainer>
     )
