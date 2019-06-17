@@ -1,14 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
-import {
-  LineChart,
-  Line,
-  ResponsiveContainer,
-  XAxis,
-  YAxis,
-  Tooltip,
-} from 'recharts'
-const moment = require('moment')
+import { LineChart, Line, ResponsiveContainer, YAxis, Tooltip } from 'recharts'
 
 const StyledMoodStat = styled.section`
   display: flex;
@@ -26,21 +18,16 @@ const StyledLineChart = styled.div`
 `
 
 export default function MoodStat({ days, lastSevenDays }) {
-  const moodData = days.map(day => ({
-    date: day.date,
-    mood: day.mood,
-  }))
-
-  const moodTicks = lastSevenDays
-    .slice()
+  const moodData = lastSevenDays
+    .map(date => {
+      const currentDay = days.find(day => day.date === date)
+      return {
+        date,
+        mood: (currentDay && currentDay.mood) || 0,
+      }
+    })
     .reverse()
-    .map(day =>
-      moment(day)
-        .format('DD/M')
-        .substring(0, 5)
-    )
 
-  console.log(moodData.date)
   return (
     <StyledMoodStat>
       <StyledTitle forhtml="moodLineChart">MOOD</StyledTitle>
@@ -75,31 +62,3 @@ export default function MoodStat({ days, lastSevenDays }) {
 //                 </p>
 //               ))}
 //             />
-// lastSevenDays
-//                 .slice()
-//                 .reverse()
-//                 .map(day =>
-//                   moment(day)
-//                     .format('DD')
-//                     .substring(0, 5)
-//                 )
-// //
-{
-  /* <XAxis
-              dataKey="date"
-              tick={{ fontSize: 5 }}
-              ticks={lastSevenDays}
-              interval={0}
-              //axisLine={false}
-            />
-
-// [ */
-}
-//   '2019-06-06',
-//   '2019-06-07',
-//   '2019-06-08',
-//   '2019-06-09',
-//   '2019-06-10',
-//   '2019-06-11',
-//   '2019-06-12',
-// ]

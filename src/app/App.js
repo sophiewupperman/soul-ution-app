@@ -22,69 +22,15 @@ const habits = [
   { name: 'ATE HEALTHY', color: '#87A2A9' },
 ]
 
-const dateSixDaysBefore = moment()
-  .subtract(7, 'day')
-  .format('YYYY-MM-DD')
-
-const dateFiveDaysBefore = moment()
-  .subtract(6, 'day')
-  .format('YYYY-MM-DD')
-
-const dateFourDaysBefore = moment()
-  .subtract(5, 'day')
-  .format('YYYY-MM-DD')
-
-const dateThreeDaysBefore = moment()
-  .subtract(3, 'day')
-  .format('YYYY-MM-DD')
-
-const dateTwoDaysBefore = moment()
-  .subtract(2, 'day')
-  .format('YYYY-MM-DD')
-
-const dateYesterday = moment()
-  .subtract(1, 'day')
-  .format('YYYY-MM-DD')
-
 const dateToday = moment().format('YYYY-MM-DD')
 
 export default function App() {
   const [days, setDays] = useState(
     getFromLocal('days') || [
       {
-        date: dateSixDaysBefore,
-        mood: '80',
-        habits: habits,
-      },
-      {
-        date: dateFiveDaysBefore,
-        mood: '20',
-        habits: habits,
-      },
-      {
-        date: dateFourDaysBefore,
-        mood: '40',
-        habits: habits,
-      },
-      {
-        date: dateThreeDaysBefore,
-        mood: '100',
-        habits: habits,
-      },
-      {
-        date: dateTwoDaysBefore,
-        mood: '40',
-        habits: habits,
-      },
-      {
-        date: dateYesterday,
-        mood: '',
-        habits: habits,
-      },
-      {
         date: dateToday,
-        mood: '100',
-        habits: habits,
+        mood: 50,
+        habits,
       },
     ]
   )
@@ -94,7 +40,12 @@ export default function App() {
   }, [days])
 
   const handleToggleHabbitChosen = index => {
-    const today = getCurrentDay()
+    const today = getCurrentDay() || {
+      date: dateToday,
+      habits,
+      mood: 0,
+    }
+
     const newHabits = [...today.habits]
     const habit = newHabits[index]
     newHabits[index] = {
@@ -105,27 +56,73 @@ export default function App() {
   }
 
   function handleMoodChange(event) {
-    const today = getCurrentDay()
+    const mood = event.target.value
+    const today = getCurrentDay() || {
+      date: dateToday,
+      habits,
+    }
 
-    saveDay({ ...today, mood: event.target.value })
+    saveDay({ ...today, mood })
   }
+
+  function getCurrentDay() {
+    return days && days.find(day => day.date === dateToday)
+  }
+
+  const currentDay = getCurrentDay() || {
+    date: dateToday,
+    mood: 50,
+    habits,
+  }
+
+  //const yesterdaysData = days.find(day => day.date === dateYesterday)
+
+  //console.log(yesterdaysData)
 
   function saveDay(newDay) {
     const newDays = days.slice()
     const index = days.findIndex(day => newDay.date === day.date)
-
-    newDays[index] = {
-      ...newDay,
+    if (index === -1) {
+      newDays.push(newDay)
+    } else {
+      newDays[index] = {
+        ...newDay,
+      }
     }
 
     setDays(newDays)
   }
 
-  function getCurrentDay() {
-    return days.find(day => day.date === dateToday)
-  }
+  //push today or do you push yesterday ? or both? neues leeres 0bjekt hinzufügen
+  // does yesterday have to be saved?     'setTimeout(setDays(saveYesterday && newDays.push(newDay) && newDays.shift()), midnight)'
 
-  const currentDay = getCurrentDay()
+  // useState(
+  //   setTimeout(
+  //     days.push({
+  //       date: dateToday,
+  //       mood: 'mood',
+  //       habits: habits,
+  //     })
+  //   ),
+  //   midnight
+  // )
+
+  // useState(
+  //   setTimeout(
+  //     days.shift({
+  //       date: dateToday,
+  //       mood: 'mood',
+  //       habits: habits,
+  //     })
+  //   ),
+  //   midnight
+  // )
+
+  // setTimeout(useState(days.push({
+  //   date: dateToday,
+  //   mood: 'mood',
+  //   habits: habits,
+  // })), newDay)
 
   return (
     <Router>
@@ -135,7 +132,11 @@ export default function App() {
           exact
           path="/"
           render={() => (
-            <Stats days={days} habits={habits} mood={currentDay.mood} />
+            <Stats
+              days={days}
+              habits={habits}
+              mood={currentDay && currentDay.mood}
+            />
           )}
         />
 
@@ -143,9 +144,9 @@ export default function App() {
           path="/form"
           render={() => (
             <Form
-              habits={currentDay.habits}
+              habits={currentDay && currentDay.habits}
               toggleHabbitChosen={handleToggleHabbitChosen} //führt die obere function toggleHabitChange
-              moodValue={currentDay.mood}
+              moodValue={currentDay && currentDay.mood}
               handleMoodChange={handleMoodChange}
             />
           )}
