@@ -9,6 +9,7 @@ const Wrapper = styled.nav`
   position: fixed;
   bottom: 0px;
   width: 100%;
+  background: transparent;
 `
 
 const StyledLink = styled(NavLink)`
@@ -19,7 +20,7 @@ const StyledLink = styled(NavLink)`
   color: white;
 
   &.active {
-    color: rgba(62, 69, 85, 0.7);
+    color: #7795c3bd;
   }
 `
 

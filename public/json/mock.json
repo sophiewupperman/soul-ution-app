@@ -1,73 +1,49 @@
 [
   {
-    "date": "2019-06-11",
-    "mood": "100",
-    "habits": [
-      { "name": "EXERCISED", "color": "#5e6a7e" },
-      { "name": "SLEPT WELL", "color": "#9DC2D0" },
-      { "name": "VITAMIN D", "color": "#C69D6F" },
-      { "name": "JOURNALED", "color": "#ABBFB9" },
-      { "name": "SOCIALISED", "color": "#CED0BC", "isChosen": true },
-      { "name": "ATE HEALTHY", "color": "#87A2A9" }
-    ]
-  },
-  {
-    "date": "2019-06-12",
-    "mood": "0",
-    "habits": [
-      { "name": "EXERCISED", "color": "#5e6a7e" },
-      { "name": "SLEPT WELL", "color": "#9DC2D0" },
-      { "name": "VITAMIN D", "color": "#C69D6F" },
-      { "name": "JOURNALED", "color": "#ABBFB9" },
-      { "name": "SOCIALISED", "color": "#CED0BC", "isChosen": true },
-      { "name": "ATE HEALTHY", "color": "#87A2A9" }
-    ]
-  },
-  {
     "date": "2019-06-13",
-    "mood": "0",
+    "mood": "80",
     "habits": [
-      { "name": "EXERCISED", "color": "#5e6a7e" },
-      { "name": "SLEPT WELL", "color": "#9DC2D0" },
+      { "name": "EXERCISED", "color": "#5e6a7e", "isChosen": true },
+      { "name": "SLEPT WELL", "color": "#9DC2D0", "isChosen": true },
       { "name": "VITAMIN D", "color": "#C69D6F", "isChosen": true },
       { "name": "JOURNALED", "color": "#ABBFB9" },
-      { "name": "SOCIALISED", "color": "#CED0BC" },
-      { "name": "ATE HEALTHY", "color": "#87A2A9" }
+      { "name": "SOCIALISED", "color": "#CED0BC", "isChosen": true },
+      { "name": "ATE HEALTHY", "color": "#87A2A9", "isChosen": true }
     ]
   },
   {
     "date": "2019-06-14",
     "mood": "0",
     "habits": [
-      { "name": "EXERCISED", "color": "#5e6a7e" },
-      { "name": "SLEPT WELL", "color": "#9DC2D0" },
-      { "name": "VITAMIN D", "color": "#C69D6F", "isChosen": true },
+      { "name": "EXERCISED", "color": "#5e6a7e", "isChosen": true },
+      { "name": "SLEPT WELL", "color": "#9DC2D0", "isChosen": true },
+      { "name": "VITAMIN D", "color": "#C69D6F" },
       { "name": "JOURNALED", "color": "#ABBFB9" },
-      { "name": "SOCIALISED", "color": "#CED0BC" },
-      { "name": "ATE HEALTHY", "color": "#87A2A9" }
+      { "name": "SOCIALISED", "color": "#CED0BC", "isChosen": true },
+      { "name": "ATE HEALTHY", "color": "#87A2A9", "isChosen": true }
     ]
   },
   {
     "date": "2019-06-15",
-    "mood": "0",
+    "mood": "50",
     "habits": [
-      { "name": "EXERCISED", "color": "#5e6a7e" },
+      { "name": "EXERCISED", "color": "#5e6a7e", "isChosen": true },
       { "name": "SLEPT WELL", "color": "#9DC2D0" },
-      { "name": "VITAMIN D", "color": "#C69D6F" },
+      { "name": "VITAMIN D", "color": "#C69D6F", "isChosen": true },
       { "name": "JOURNALED", "color": "#ABBFB9", "isChosen": true },
-      { "name": "SOCIALISED", "color": "#CED0BC" },
+      { "name": "SOCIALISED", "color": "#CED0BC", "isChosen": true },
       { "name": "ATE HEALTHY", "color": "#87A2A9" }
     ]
   },
   {
     "date": "2019-06-16",
-    "mood": "0",
+    "mood": "100",
     "habits": [
-      { "name": "EXERCISED", "color": "#5e6a7e", "isChosen": true },
-      { "name": "SLEPT WELL", "color": "#9DC2D0", "isChosen": true },
-      { "name": "VITAMIN D", "color": "#C69D6F" },
-      { "name": "JOURNALED", "color": "#ABBFB9", "isChosen": true },
-      { "name": "SOCIALISED", "color": "#CED0BC" },
+      { "name": "EXERCISED", "color": "#5e6a7e" },
+      { "name": "SLEPT WELL", "color": "#9DC2D0" },
+      { "name": "VITAMIN D", "color": "#C69D6F", "isChosen": true },
+      { "name": "JOURNALED", "color": "#ABBFB9" },
+      { "name": "SOCIALISED", "color": "#CED0BC", "isChosen": true },
       { "name": "ATE HEALTHY", "color": "#87A2A9" }
     ]
   },
@@ -76,7 +52,31 @@
     "mood": "0",
     "habits": [
       { "name": "EXERCISED", "color": "#5e6a7e", "isChosen": true },
-      { "name": "SLEPT WELL", "color": "#9DC2D0", "isChosen": true },
+      { "name": "SLEPT WELL", "color": "#9DC2D0" },
+      { "name": "VITAMIN D", "color": "#C69D6F" },
+      { "name": "JOURNALED", "color": "#ABBFB9" },
+      { "name": "SOCIALISED", "color": "#CED0BC" },
+      { "name": "ATE HEALTHY", "color": "#87A2A9", "isChosen": true }
+    ]
+  },
+  {
+    "date": "2019-06-18",
+    "mood": "10",
+    "habits": [
+      { "name": "EXERCISED", "color": "#5e6a7e" },
+      { "name": "SLEPT WELL", "color": "#9DC2D0" },
+      { "name": "VITAMIN D", "color": "#C69D6F", "isChosen": true },
+      { "name": "JOURNALED", "color": "#ABBFB9" },
+      { "name": "SOCIALISED", "color": "#CED0BC" },
+      { "name": "ATE HEALTHY", "color": "#87A2A9" }
+    ]
+  },
+  {
+    "date": "2019-06-19",
+    "mood": "0",
+    "habits": [
+      { "name": "EXERCISED", "color": "#5e6a7e" },
+      { "name": "SLEPT WELL", "color": "#9DC2D0" },
       { "name": "VITAMIN D", "color": "#C69D6F" },
       { "name": "JOURNALED", "color": "#ABBFB9" },
       { "name": "SOCIALISED", "color": "#CED0BC" },

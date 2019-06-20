@@ -1,13 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-// const StyledHabitStreaks = styled.section`
-//   display: grid;
-//   position: absolute;
-//   right: 5px;
-//   top: 334px;
-//   z-index: 2;
-// `
 const StyledHabitStreak = styled.div`
   background: ${props => props.color || '#5e6a7e'};
   margin-bottom: 25px;
@@ -18,9 +11,9 @@ const StyledHabitStreak = styled.div`
 const StyledHabitBar = styled.div`
   margin-bottom: 3.5px;
   margin-top: 3.5px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.3);
   height: 30px;
-  box-shadow: 0px 0px 18px 4px rgba(87, 95, 107, 0.58);
+  box-shadow: 0px 0px 16px 1px rgba(27, 61, 84, 0.5);
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 `

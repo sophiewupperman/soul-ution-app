@@ -14,12 +14,12 @@ const Grid = styled.div`
 `
 
 const habits = [
-  { name: 'EXERCISED', color: '#5e6a7e' },
-  { name: 'SLEPT WELL', color: '#9DC2D0' },
-  { name: 'VITAMIN D', color: '#C69D6F' },
-  { name: 'JOURNALED', color: '#ABBFB9' },
-  { name: 'SOCIALISED', color: '#CED0BC' },
-  { name: 'ATE HEALTHY', color: '#87A2A9' },
+  { name: 'EXERCISED', color: '#5C6BC0' },
+  { name: 'SLEPT WELL', color: '#42A5F5  ' },
+  { name: 'VITAMIN D', color: '#81D4FA  ' },
+  { name: 'JOURNALED', color: '#4DD0E1  ' },
+  { name: 'SOCIALISED', color: '#80CBC4  ' },
+  { name: 'ATE HEALTHY', color: '#C5E1A5  ' },
 ]
 
 const dateToday = moment().format('YYYY-MM-DD')
@@ -75,10 +75,6 @@ export default function App() {
     habits,
   }
 
-  //const yesterdaysData = days.find(day => day.date === dateYesterday)
-
-  //console.log(yesterdaysData)
-
   function saveDay(newDay) {
     const newDays = days.slice()
     const index = days.findIndex(day => newDay.date === day.date)
@@ -92,37 +88,6 @@ export default function App() {
 
     setDays(newDays)
   }
-
-  //push today or do you push yesterday ? or both? neues leeres 0bjekt hinzufügen
-  // does yesterday have to be saved?     'setTimeout(setDays(saveYesterday && newDays.push(newDay) && newDays.shift()), midnight)'
-
-  // useState(
-  //   setTimeout(
-  //     days.push({
-  //       date: dateToday,
-  //       mood: 'mood',
-  //       habits: habits,
-  //     })
-  //   ),
-  //   midnight
-  // )
-
-  // useState(
-  //   setTimeout(
-  //     days.shift({
-  //       date: dateToday,
-  //       mood: 'mood',
-  //       habits: habits,
-  //     })
-  //   ),
-  //   midnight
-  // )
-
-  // setTimeout(useState(days.push({
-  //   date: dateToday,
-  //   mood: 'mood',
-  //   habits: habits,
-  // })), newDay)
 
   return (
     <Router>

@@ -9,12 +9,13 @@ const StyledMoodStat = styled.section`
 const StyledTitle = styled.label`
   position: fixed;
   left: 7px;
+  font-size: 20px;
 `
 const StyledLineChart = styled.div`
   position: relative;
   margin-top: 0px;
   width: 100%;
-  height: 170px;
+  height: 180px;
 `
 
 export default function MoodStat({ days, lastSevenDays }) {
@@ -42,7 +43,7 @@ export default function MoodStat({ days, lastSevenDays }) {
               axisLine={false}
               tickLine={false}
               ticks={[0, 50, 100]}
-              tick={{ fill: 'white', fontSize: 12, dx: 20 }}
+              tick={{ fill: 'white', fontSize: 12, dx: 18 }}
             />
           </LineChart>
         </ResponsiveContainer>

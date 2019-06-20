@@ -5,23 +5,25 @@ import { FiSmile, FiFrown } from 'react-icons/fi'
 const StyledMoodSlider = styled.div`
   justify-items: center;
   gap: 30px;
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 `
 
 export default function MoodSlider({ handleMoodChange, moodValue }) {
   return (
     <StyledMoodSlider>
-      <FiFrown size={30} />
+      <FiFrown size={40} />
       <input
         name="mood"
         type="range"
         min="0"
         max="100"
-        size="200"
+        size="250"
+        background="#144C50"
         value={moodValue}
         onChange={handleMoodChange}
       />
-      <FiSmile size={30} />
+      <FiSmile size={40} />
     </StyledMoodSlider>
   )
 }

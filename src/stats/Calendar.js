@@ -13,7 +13,8 @@ const StyledCalendar = styled.section`
 const StyledCurrentDate = styled.div`
   display: grid;
   width: calc(100% / 7);
-  background: rgba(62, 69, 85, 0.3);
+  background: #7795c375;
+
   border-radius: 13px;
   position: absolute;
   right: 0px;

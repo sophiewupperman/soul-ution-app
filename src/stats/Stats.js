@@ -10,6 +10,8 @@ const StyledStats = styled.section`
   display: grid;
   grid-template-rows: 1fr 2fr 4fr;
   align-items: center;
+  height: 100vh;
+  padding-bottom: 50px;
 `
 
 export default function Stats({ habits, days }) {

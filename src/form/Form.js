@@ -7,8 +7,7 @@ const StyledForm = styled.div`
   display: grid;
   height: 100vh;
   justify-items: center;
-  gap: 10px;
-  padding-bottom: 45px;
+  padding-bottom: 50px;
 `
 
 export default function Form({
@@ -18,23 +17,22 @@ export default function Form({
   moodValue,
   handleMoodChange,
 }) {
-  /* originalArray.map(object => object.b); */
-  // const dayHabits = days.map(day => day.habits)
-
   return (
     <StyledForm days={days}>
       <h1>SOUL UTION</h1>
       <label forhtml="mood">How are you feeling today?</label>
-      {moodValue}%
+      <p style={{ fontSize: 25, marginTop: 4, marginBottom: 0 }}>
+        {moodValue}%
+      </p>
       <MoodSlider handleMoodChange={handleMoodChange} moodValue={moodValue} />
       <p>Maintained your habits?</p>
       {habits &&
         habits.map((habit, index) => {
           return (
             <HabitButton
-              habit={habit} //why? ... habit in der arrow funktion steht (name) für ein einzelndes object in dem array - in der HabitButton Datei wird das weiter gegeben als prop {habit} um den namen aus dem objekt oben zu bekommen - the VALUE of HabitButton is one single object from the habits array called habit - this is how you get the Tag to have a meaning/value
-              index={index} //the second parameter defines the index
-              toggleHabbitChosen={toggleHabbitChosen} //führt die obere function toggleHabitChange
+              habit={habit}
+              index={index}
+              toggleHabbitChosen={toggleHabbitChosen}
               key={habit.name}
               isChosen={habit.isChosen}
             />
@@ -43,17 +41,3 @@ export default function Form({
     </StyledForm>
   )
 }
-
-// {days.map((day, index) =>
-//   day.habits.map((habit, index) => {
-//     return (
-//       <HabitButton
-//         habit={habit} //why? ... habit in der arrow funktion steht (name) für ein einzelndes object in dem array - in der HabitButton Datei wird das weiter gegeben als prop {habit} um den namen aus dem objekt oben zu bekommen - the VALUE of HabitButton is one single object from the habits array called habit - this is how you get the Tag to have a meaning/value
-//         index={index} //the second parameter defines the index
-//         toggleHabbitChosen={toggleHabbitChosen} //führt die obere function toggleHabitChange
-//         key={habit.name}
-//         isChosen={habit.isChosen}
-//       />
-//     )
-//   })
-// )}

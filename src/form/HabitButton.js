@@ -7,20 +7,19 @@ const StyledButttonForm = styled.div`
 `
 
 const StyledHabitButton = styled.button`
-  background-color: ${props => (props.active ? ' #889ab5' : '#f1f5fa')};
+  background-color: ${props => (props.active ? ' transparent' : '#f1f5fa')};
   border: none;
-  border-radius: 20px;
-  color: ${props => (props.active ? '#f1f5fa' : '#889ab5')};
+  border-radius: 50px;
+  color: ${props => (props.active ? '#f1f5fa' : '#7795c3bd')};
   width: 200px;
-  height: 30px;
+  height: 40px;
   margin: 10px;
   text-align: center;
   text-decoration: none;
   font-size: 20px;
+  border: ${props => (props.active ? '2px solid #f1f5fa' : 'none')};
   box-shadow: ${props =>
-    props.active
-      ? 'inset 0 2px 4px rgba(0, 0, 0, 0.4)'
-      : '0px 4px 7px rgba(0, 0, 0, 0.5)'};
+    props.active ? 'none' : ' 0px 5px 4px -6px rgba(27,61,84,0.51)'};
 `
 
 const HabitButton = ({
